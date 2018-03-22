@@ -60538,6 +60538,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _Text = _require(_dependencyMap[7], "../components/Text");
 
+  var _Header = _require(_dependencyMap[8], "../components/Header");
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60588,6 +60590,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
       return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.handleChangeText = function () {
         console.log("change text");
+      }, _this.handleOptionsPress = function () {
+        console.log("options pressed");
       }, _this.handleSwapCurrency = function () {
         console.log("swap");
       }, _this.handlePressBaseCurrency = function () {
@@ -60605,7 +60609,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 41
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -60613,54 +60617,71 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "light-content",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 42
             }
           }),
-          _react3.default.createElement(_Logo.Logo, {
+          _react3.default.createElement(_Header.Header, {
+            onPress: this.handleOptionsPress,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 43
             }
           }),
-          _react3.default.createElement(_TextInput.InputWithButton, {
-            buttonText: TEMP_BASE_CURRENCY,
-            onPress: this.handlePressBaseCurrency,
-            defaultValue: TEMP_BASE_PRICE,
-            keyboardType: "numeric",
-            onChangeText: this.handleChangeText,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 39
-            }
-          }),
-          _react3.default.createElement(_TextInput.InputWithButton, {
-            editable: false,
-            buttonText: TEMP_QUOTE_CURRENCY,
-            onPress: this.handlePressQuoteCurrency,
-            value: TEMP_QUOTE_PRICE,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 46
-            }
-          }),
-          _react3.default.createElement(_Text.LastConverted, {
-            base: TEMP_BASE_CURRENCY,
-            quote: TEMP_QUOTE_CURRENCY,
-            conversionRate: TEMP_CONVERSION_RATE,
-            date: TEMP_CONVERSION_DATE,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 52
-            }
-          }),
-          _react3.default.createElement(_Buttons.ClearButton, {
-            text: "Reverse Currencies",
-            onPress: this.handleSwapCurrency,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 58
-            }
-          })
+          _react3.default.createElement(
+            _reactNative.KeyboardAvoidingView,
+            {
+              behavior: "padding",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 44
+              }
+            },
+            _react3.default.createElement(_Logo.Logo, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 45
+              }
+            }),
+            _react3.default.createElement(_TextInput.InputWithButton, {
+              buttonText: TEMP_BASE_CURRENCY,
+              onPress: this.handlePressBaseCurrency,
+              defaultValue: TEMP_BASE_PRICE,
+              keyboardType: "numeric",
+              onChangeText: this.handleChangeText,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 46
+              }
+            }),
+            _react3.default.createElement(_TextInput.InputWithButton, {
+              editable: false,
+              buttonText: TEMP_QUOTE_CURRENCY,
+              onPress: this.handlePressQuoteCurrency,
+              value: TEMP_QUOTE_PRICE,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 53
+              }
+            }),
+            _react3.default.createElement(_Text.LastConverted, {
+              base: TEMP_BASE_CURRENCY,
+              quote: TEMP_QUOTE_CURRENCY,
+              conversionRate: TEMP_CONVERSION_RATE,
+              date: TEMP_CONVERSION_DATE,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 59
+              }
+            }),
+            _react3.default.createElement(_Buttons.ClearButton, {
+              text: "Reverse Currencies",
+              onPress: this.handleSwapCurrency,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 65
+              }
+            })
+          )
         );
       }
     }]);
@@ -60669,7 +60690,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }(_react2.Component));
 
   exports.default = Home;
-},495,[112,131,12,496,515,520,531,535],"app/screens/Home.js");
+},495,[112,131,12,496,515,520,531,535,539],"app/screens/Home.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68748,5 +68769,133 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         return hooks;
     });
 },538,[],"node_modules/moment/moment.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.styles = exports.Header = undefined;
+
+  var _styles = _require(_dependencyMap[0], "./styles");
+
+  var _styles2 = _interopRequireDefault(_styles);
+
+  var _Header = _require(_dependencyMap[1], "./Header");
+
+  var _Header2 = _interopRequireDefault(_Header);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  exports.Header = _Header2.default;
+  exports.styles = _styles2.default;
+},539,[540,541],"app/components/Header/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _reactNativeExtendedStylesheet = _require(_dependencyMap[0], "react-native-extended-stylesheet");
+
+  var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
+
+  var _reactNative = _require(_dependencyMap[1], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  exports.default = _reactNativeExtendedStylesheet2.default.create({
+    container: {
+      position: "absolute",
+      left: 0,
+      right: 0,
+      top: 0,
+      "@media ios": {
+        paddingTop: 30
+      },
+      "@media android": {
+        paddingTop: _reactNative.StatusBar.currentHeight
+      }
+    },
+    button: {
+      alignSelf: "flex-end",
+      paddingVertical: 5,
+      paddingHorizontal: 14
+    },
+    icon: {
+      width: 18
+    }
+  });
+},540,[499,12],"app/components/Header/styles.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Header/Header.js";
+
+  var _react = _require(_dependencyMap[0], "react");
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _propTypes = _require(_dependencyMap[1], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = _require(_dependencyMap[2], "react-native");
+
+  var _styles = _require(_dependencyMap[3], "./styles");
+
+  var _styles2 = _interopRequireDefault(_styles);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var Header = function Header(_ref) {
+    var onPress = _ref.onPress;
+    return _react2.default.createElement(
+      _reactNative.View,
+      {
+        style: _styles2.default.container,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        }
+      },
+      _react2.default.createElement(
+        _reactNative.TouchableOpacity,
+        {
+          style: _styles2.default.button,
+          onPress: onPress,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 8
+          }
+        },
+        _react2.default.createElement(_reactNative.Image, {
+          style: _styles2.default.icon,
+          resizeMode: "contain",
+          source: _require(_dependencyMap[4], "./images/gear.png"),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 9
+          }
+        })
+      )
+    );
+  };
+
+  Header.propTypes = {
+    onPress: _propTypes2.default.func
+  };
+  exports.default = Header;
+},541,[112,295,12,540,542],"app/components/Header/Header.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/app/components/Header/images",
+    "width": 34,
+    "height": 34,
+    "scales": [1, 2, 3],
+    "hash": "2ec83825d42a604aa2461b551b86e8e3",
+    "name": "gear",
+    "type": "png"
+  });
+},542,[329],"app/components/Header/images/gear.png");
 require(23);
 require(11);//# sourceMappingURL=index.map
