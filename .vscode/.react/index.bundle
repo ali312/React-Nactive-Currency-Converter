@@ -60486,7 +60486,11 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _Home2 = _interopRequireDefault(_Home);
 
-  var _reactNativeExtendedStylesheet = _require(_dependencyMap[2], "react-native-extended-stylesheet");
+  var _CurrencyList = _require(_dependencyMap[2], "./screens/CurrencyList");
+
+  var _CurrencyList2 = _interopRequireDefault(_CurrencyList);
+
+  var _reactNativeExtendedStylesheet = _require(_dependencyMap[3], "react-native-extended-stylesheet");
 
   var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
 
@@ -60501,14 +60505,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   });
 
   exports.default = function () {
-    return _react2.default.createElement(_Home2.default, {
+    return _react2.default.createElement(_CurrencyList2.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 14
       }
     });
   };
-},494,[112,495,499],"app/index.js");
+},494,[112,495,543,499],"app/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -69009,5 +69013,77 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     "type": "png"
   });
 },542,[329],"app/components/Header/images/gear.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/screens/CurrencyList.js";
+
+  var _react = _require(_dependencyMap[0], "react");
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _reactNative = _require(_dependencyMap[1], "react-native");
+
+  var _currencies = _require(_dependencyMap[2], "../data/currencies");
+
+  var _currencies2 = _interopRequireDefault(_currencies);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var CurrencyList = function CurrencyList() {
+    return _react2.default.createElement(
+      _reactNative.View,
+      {
+        style: {
+          flex: 1
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        }
+      },
+      _react2.default.createElement(_reactNative.StatusBar, {
+        barStyle: "default",
+        translucent: false,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        }
+      }),
+      _react2.default.createElement(_reactNative.FlatList, {
+        data: _currencies2.default,
+        renderItem: function renderItem(_ref) {
+          var item = _ref.item;
+          return _react2.default.createElement(
+            _reactNative.Text,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 11
+              }
+            },
+            item
+          );
+        },
+        keyExtractor: function keyExtractor(item) {
+          return item;
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        }
+      })
+    );
+  };
+
+  exports.default = CurrencyList;
+},543,[112,12,544],"app/screens/CurrencyList.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = ["AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK", "SGD", "THB", "TRY", "USD", "ZAR"];
+},544,[],"app/data/currencies.js");
 require(23);
 require(11);//# sourceMappingURL=index.map
