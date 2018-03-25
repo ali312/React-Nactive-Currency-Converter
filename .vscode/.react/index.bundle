@@ -62365,67 +62365,175 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
   var _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Logo/Logo.js";
 
-  var _react = _require(_dependencyMap[0], "react");
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _react2 = _interopRequireDefault(_react);
+  var _reactNative = _require(_dependencyMap[2], "react-native");
 
-  var _reactNative = _require(_dependencyMap[1], "react-native");
-
-  var _styles = _require(_dependencyMap[2], "./styles");
+  var _styles = _require(_dependencyMap[3], "./styles");
 
   var _styles2 = _interopRequireDefault(_styles);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  var Logo = function Logo() {
-    return _react2.default.createElement(
-      _reactNative.View,
-      {
-        style: _styles2.default.container,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 5
-        }
-      },
-      _react2.default.createElement(
-        _reactNative.ImageBackground,
-        {
-          style: _styles2.default.containerImage,
-          resizeMode: "contain",
-          source: _require(_dependencyMap[3], "./images/background.png"),
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 6
-          }
-        },
-        _react2.default.createElement(_reactNative.Image, {
-          style: _styles2.default.image,
-          resizeMode: "contain",
-          source: _require(_dependencyMap[4], "./images/logo.png"),
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 11
-          }
-        })
-      ),
-      _react2.default.createElement(
-        _reactNative.Text,
-        {
-          style: _styles2.default.text,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 17
-          }
-        },
-        "Currency Converter"
-      )
-    );
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    Logo: {
+      displayName: "Logo"
+    }
   };
 
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Logo/Logo.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var ANIMATION_DURATION = 250;
+
+  var Logo = _wrapComponent("Logo")(function (_Component) {
+    _inherits(Logo, _Component);
+
+    function Logo(props) {
+      _classCallCheck(this, Logo);
+
+      var _this = _possibleConstructorReturn(this, (Logo.__proto__ || Object.getPrototypeOf(Logo)).call(this, props));
+
+      _this.keyboardShow = function () {
+        _reactNative.Animated.parallel([_reactNative.Animated.timing(_this.containerImageWidth, {
+          toValue: _styles2.default.$smallContainerSize,
+          duration: ANIMATION_DURATION
+        }), _reactNative.Animated.timing(_this.imageWidth, {
+          toValue: _styles2.default.$smallImageSize,
+          duration: ANIMATION_DURATION
+        })]).start();
+      };
+
+      _this.keyboardHide = function () {
+        _reactNative.Animated.parallel([_reactNative.Animated.timing(_this.containerImageWidth, {
+          toValue: _styles2.default.$largeContainerSize,
+          duration: ANIMATION_DURATION
+        }), _reactNative.Animated.timing(_this.imageWidth, {
+          toValue: _styles2.default.$largeImageSize,
+          duration: ANIMATION_DURATION
+        })]).start();
+      };
+
+      _this.containerImageWidth = new _reactNative.Animated.Value(_styles2.default.$largeContainerSize);
+      _this.imageWidth = new _reactNative.Animated.Value(_styles2.default.$largeImageSize);
+      return _this;
+    }
+
+    _createClass(Logo, [{
+      key: "componentWillMount",
+      value: function componentWillMount() {
+        var showListener = "keyboardWillShow";
+        var hideListener = "keyboardWillHide";
+
+        if (_reactNative.Platform.OS === "android") {
+          showListener = "keyboardDidShow";
+          hideListener = "keyboardDidHide";
+        }
+
+        this.keyboardShowListener = _reactNative.Keyboard.addListener(showListener, this.keyboardShow);
+        this.keyboardHideListener = _reactNative.Keyboard.addListener(hideListener, this.keyboardHide);
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        this.keyboardShowListener.remove();
+        this.keyboardHideListener.remove();
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var containerImageStyles = [_styles2.default.containerImage, {
+          width: this.containerImageWidth,
+          height: this.containerImageWidth
+        }];
+        var imageStyles = [_styles2.default.logo, {
+          width: this.imageWidth,
+          height: this.imageWidth
+        }];
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            style: _styles2.default.container,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 83
+            }
+          },
+          _react3.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: containerImageStyles,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 84
+              }
+            },
+            _react3.default.createElement(_reactNative.Animated.Image, {
+              resizeMode: "contain",
+              style: [_reactNative.StyleSheet.absoluteFill, containerImageStyles],
+              source: _require(_dependencyMap[4], './images/background.png'),
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 85
+              }
+            }),
+            _react3.default.createElement(_reactNative.Animated.Image, {
+              resizeMode: "contain",
+              style: imageStyles,
+              source: _require(_dependencyMap[5], './images/logo.png'),
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 90
+              }
+            })
+          ),
+          _react3.default.createElement(
+            _reactNative.Text,
+            {
+              style: _styles2.default.text,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 96
+              }
+            },
+            "Currency Converter"
+          )
+        );
+      }
+    }]);
+
+    return Logo;
+  }(_react2.Component));
+
   exports.default = Logo;
-},516,[112,12,517,518,519],"app/components/Logo/Logo.js");
+},516,[112,131,12,517,518,519],"app/components/Logo/Logo.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -62441,17 +62549,21 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var imageWidth = _reactNative.Dimensions.get("window").width * 0.5;
   exports.default = _reactNativeExtendedStylesheet2.default.create({
+    $largeContainerSize: imageWidth,
+    $largeImageSize: imageWidth * 0.5,
+    $smallContainerSize: imageWidth * 0.5,
+    $smallImageSize: imageWidth * 0.25,
     container: {
       alignItems: "center"
     },
     containerImage: {
       alignItems: "center",
       justifyContent: "center",
-      width: imageWidth,
-      height: imageWidth
+      width: "$largeContainerSize",
+      height: "$largeContainerSize"
     },
-    image: {
-      width: imageWidth * 0.5
+    logo: {
+      width: "$largeImageSize"
     },
     text: {
       fontWeight: "600",
