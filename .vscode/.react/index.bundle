@@ -60482,26 +60482,33 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _Home = _require(_dependencyMap[1], "./screens/Home");
+  var _reactNativeExtendedStylesheet = _require(_dependencyMap[1], "react-native-extended-stylesheet");
+
+  var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
+
+  var _Home = _require(_dependencyMap[2], "./screens/Home");
 
   var _Home2 = _interopRequireDefault(_Home);
 
-  var _CurrencyList = _require(_dependencyMap[2], "./screens/CurrencyList");
+  var _CurrencyList = _require(_dependencyMap[3], "./screens/CurrencyList");
 
   var _CurrencyList2 = _interopRequireDefault(_CurrencyList);
 
-  var _Options = _require(_dependencyMap[3], "./screens/Options");
+  var _Options = _require(_dependencyMap[4], "./screens/Options");
 
   var _Options2 = _interopRequireDefault(_Options);
 
-  var _reactNativeExtendedStylesheet = _require(_dependencyMap[4], "react-native-extended-stylesheet");
+  var _Themes = _require(_dependencyMap[5], "./screens/Themes");
 
-  var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
+  var _Themes2 = _interopRequireDefault(_Themes);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   _reactNativeExtendedStylesheet2.default.build({
     $primaryBlue: "#4F6D7A",
+    $primaryOrange: "#D57A66",
+    $primaryGreen: "#00BD9D",
+    $primaryPurple: "#9E76AF",
     $white: "#fff",
     $border: "#E2E2E2",
     $inputText: "#797979",
@@ -60510,14 +60517,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   });
 
   exports.default = function () {
-    return _react2.default.createElement(_Options2.default, {
+    return _react2.default.createElement(_Themes2.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 22
       }
     });
   };
-},494,[112,495,543,551,499],"app/index.js");
+},494,[112,499,495,543,551,609],"app/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -69263,7 +69270,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         _ref$visible = _ref.visible,
         visible = _ref$visible === undefined ? true : _ref$visible,
         _ref$customIcon = _ref.customIcon,
-        customIcon = _ref$customIcon === undefined ? null : _ref$customIcon;
+        customIcon = _ref$customIcon === undefined ? null : _ref$customIcon,
+        iconBackground = _ref.iconBackground;
     return _react2.default.createElement(
       _reactNative.TouchableHighlight,
       {
@@ -69297,6 +69305,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         selected ? _react2.default.createElement(_Icon2.default, {
           visible: visible,
           checkmark: checkmark,
+          iconBackground: iconBackground,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 11
@@ -69318,7 +69327,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     checkmark: _propTypes2.default.bool,
     selected: _propTypes2.default.bool,
     visible: _propTypes2.default.bool,
-    customIcon: _propTypes2.default.element
+    customIcon: _propTypes2.default.element,
+    iconBackground: _propTypes2.default.string
   };
   exports.default = ListItem;
 },546,[112,295,12,545,547],"app/components/List/ListItem.js");
@@ -69346,11 +69356,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var Icon = function Icon(_ref) {
     var checkmark = _ref.checkmark,
-        visible = _ref.visible;
+        visible = _ref.visible,
+        iconBackground = _ref.iconBackground;
     var iconStyles = [_styles2.default.icon];
 
     if (visible) {
       iconStyles.push(_styles2.default.iconVisible);
+    }
+
+    if (iconBackground) {
+      iconStyles.push({
+        backgroundColor: iconBackground
+      });
     }
 
     return _react2.default.createElement(
@@ -69359,7 +69376,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         style: iconStyles,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 17
         }
       },
       checkmark ? _react2.default.createElement(_reactNative.Image, {
@@ -69368,7 +69385,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         resizeMode: "contain",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 19
         }
       }) : null
     );
@@ -69376,7 +69393,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   Icon.propTypes = {
     visible: _propTypes2.default.bool,
-    checkmark: _propTypes2.default.bool
+    checkmark: _propTypes2.default.bool,
+    iconBackground: _propTypes2.default.string
   };
   exports.default = Icon;
 },547,[112,295,12,545,548],"app/components/List/Icon.js");
@@ -72133,5 +72151,189 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     "md-woman": 62378
   };
 },608,[],"node_modules/react-native-vector-icons/glyphmaps/Ionicons.json");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/screens/Themes.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _reactNative = _require(_dependencyMap[2], "react-native");
+
+  var _reactNativeExtendedStylesheet = _require(_dependencyMap[3], "react-native-extended-stylesheet");
+
+  var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
+
+  var _List = _require(_dependencyMap[4], "../components/List");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    Themes: {
+      displayName: "Themes"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/screens/Themes.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var styles = _reactNativeExtendedStylesheet2.default.create({
+    $blue: "$primaryBlue",
+    $green: "$primaryGreen",
+    $orange: "$primaryOrange",
+    $purple: "$primaryPurple"
+  });
+
+  var Themes = _wrapComponent("Themes")(function (_Component) {
+    _inherits(Themes, _Component);
+
+    function Themes() {
+      var _ref;
+
+      var _temp, _this, _ret;
+
+      _classCallCheck(this, Themes);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Themes.__proto__ || Object.getPrototypeOf(Themes)).call.apply(_ref, [this].concat(args))), _this), _this.handlePressTheme = function (color) {
+        console.log("theme press", color);
+      }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(Themes, [{
+      key: "render",
+      value: function render() {
+        var _this2 = this;
+
+        return _react3.default.createElement(
+          _reactNative.ScrollView,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 20
+            }
+          },
+          _react3.default.createElement(_reactNative.StatusBar, {
+            translucent: false,
+            barStyle: "default",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 21
+            }
+          }),
+          _react3.default.createElement(_List.ListItem, {
+            text: "Blue",
+            onPress: function onPress() {
+              return _this2.handlePressTheme(styles.$blue);
+            },
+            selected: true,
+            checkmark: false,
+            iconBackground: styles.$blue,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 22
+            }
+          }),
+          _react3.default.createElement(_List.Separator, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 29
+            }
+          }),
+          _react3.default.createElement(_List.ListItem, {
+            text: "Orange",
+            onPress: function onPress() {
+              return _this2.handlePressTheme(styles.$orange);
+            },
+            selected: true,
+            checkmark: false,
+            iconBackground: styles.$orange,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 30
+            }
+          }),
+          _react3.default.createElement(_List.Separator, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 37
+            }
+          }),
+          _react3.default.createElement(_List.ListItem, {
+            text: "Green",
+            onPress: function onPress() {
+              return _this2.handlePressTheme(styles.$green);
+            },
+            selected: true,
+            checkmark: false,
+            iconBackground: styles.$green,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 38
+            }
+          }),
+          _react3.default.createElement(_List.Separator, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 45
+            }
+          }),
+          _react3.default.createElement(_List.ListItem, {
+            text: "Purple",
+            onPress: function onPress() {
+              return _this2.handlePressTheme(styles.$purple);
+            },
+            selected: true,
+            checkmark: false,
+            iconBackground: styles.$purple,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 46
+            }
+          }),
+          _react3.default.createElement(_List.Separator, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 53
+            }
+          })
+        );
+      }
+    }]);
+
+    return Themes;
+  }(_react2.Component));
+
+  exports.default = Themes;
+},609,[112,131,12,499,544],"app/screens/Themes.js");
 require(23);
 require(11);//# sourceMappingURL=index.map
