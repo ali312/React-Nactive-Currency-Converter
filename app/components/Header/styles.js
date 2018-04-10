@@ -1,5 +1,5 @@
 import EStyleSheet from "react-native-extended-stylesheet";
-import { StatusBar, Dimensions, Platform } from "react-native";
+import { Dimensions, Platform } from "react-native";
 
 export default EStyleSheet.create({
   container: {
@@ -9,9 +9,6 @@ export default EStyleSheet.create({
     top: 0,
     "@media ios": {
       paddingTop: 30
-    },
-    "@media android": {
-      paddingTop: StatusBar.currentHeight
     }
   },
   button: {
