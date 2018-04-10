@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ScrollView, StatusBar, Platform } from "react-native";
-import PropTypes from "prop-types";
+import { ScrollView, StatusBar, Platform, Linking } from "react-native";
 
+import PropTypes from "prop-types";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import { ListItem, Separator } from "../components/List";
@@ -14,13 +14,13 @@ class Options extends Component {
   static propTypes = {
     navigation: PropTypes.object
   };
-  
+
   handleThemesPress = () => {
     this.props.navigation.navigate("Themes");
   };
 
   handleSitePress = () => {
-    console.log("site press");
+    Linking.openURL("http://fixr.io").catch(() => alert("ERROR"));
   };
 
   render() {
