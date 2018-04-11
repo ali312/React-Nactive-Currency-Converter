@@ -84256,7 +84256,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var changeCurrencyAmount = exports.changeCurrencyAmount = function changeCurrencyAmount(amount) {
     return {
       type: CHANGE_CURRENCY_AMOUNT,
-      amount: amount
+      amount: parseFloat(amount)
     };
   };
 },686,[],"app/actions/currencies.js");
