@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
+
 import PropTypes from "prop-types";
+
 import DropdownAlert from 'react-native-dropdownalert';
 
 class AlertProvider extends Component {
