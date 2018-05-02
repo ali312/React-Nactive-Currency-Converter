@@ -1,32 +1,36 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { View, Text, TouchableHighlight, TextInput } from "react-native";
-import styles from "./styles";
-import color from "color";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { View, TextInput, TouchableHighlight, Text } from 'react-native';
+import color from 'color';
 
-const InputWithButton = props => {
-  const { onPress, buttonText, editable = true } = props;
+import styles from './styles';
 
-  const containerStyles = [styles.container];
+const InputWithButton = (props) => {
   const underlayColor = color(styles.$buttonBackgroundColorBase).darken(
-    styles.$buttonBackgroundColorModifier
+    styles.$buttonBackgroundColorModifier,
   );
 
-  if (editable === false) {
+  const containerStyles = [styles.container];
+  if (props.editable === false) {
     containerStyles.push(styles.containerDisabled);
+  }
+
+  const buttonTextStyles = [styles.buttonText];
+  if (props.textColor) {
+    buttonTextStyles.push({ color: props.textColor });
   }
 
   return (
     <View style={containerStyles}>
       <TouchableHighlight
+        onPress={props.onPress}
         style={styles.buttonContainer}
         underlayColor={underlayColor}
-        onPress={onPress}
       >
-        <Text style={styles.buttonText}>{buttonText}</Text>
+        <Text style={buttonTextStyles}>{props.buttonText}</Text>
       </TouchableHighlight>
-      <View style={styles.border} />
-      <TextInput style={styles.input} {...props} />
+      <View style={styles.separator} />
+      <TextInput style={styles.input} underlineColorAndroid="transparent" {...props} />
     </View>
   );
 };
@@ -34,7 +38,8 @@ const InputWithButton = props => {
 InputWithButton.propTypes = {
   onPress: PropTypes.func,
   buttonText: PropTypes.string,
-  editable: PropTypes.bool
+  editable: PropTypes.bool,
+  textColor: PropTypes.string,
 };
 
 export default InputWithButton;

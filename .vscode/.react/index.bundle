@@ -74068,9 +74068,10 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         return _react3.default.createElement(
           _Container.Container,
           {
+            backgroundColor: this.props.primaryColor,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 66
+              lineNumber: 67
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -74078,14 +74079,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "light-content",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 67
+              lineNumber: 68
             }
           }),
           _react3.default.createElement(_Header.Header, {
             onPress: this.handleOptionsPress,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 68
+              lineNumber: 69
             }
           }),
           _react3.default.createElement(
@@ -74094,13 +74095,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               behavior: "padding",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 69
+                lineNumber: 70
               }
             },
             _react3.default.createElement(_Logo.Logo, {
+              tintColor: this.props.primaryColor,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 70
+                lineNumber: 71
               }
             }),
             _react3.default.createElement(_TextInput.InputWithButton, {
@@ -74109,9 +74111,10 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               defaultValue: this.props.amount.toString(),
               keyboardType: "numeric",
               onChangeText: this.handleChangeText,
+              textColor: this.props.primaryColor,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 71
+                lineNumber: 72
               }
             }),
             _react3.default.createElement(_TextInput.InputWithButton, {
@@ -74119,9 +74122,10 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               buttonText: this.props.quoteCurrency,
               onPress: this.handlePressQuoteCurrency,
               value: quotePrice,
+              textColor: this.props.primaryColor,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 78
+                lineNumber: 80
               }
             }),
             _react3.default.createElement(_Text.LastConverted, {
@@ -74131,7 +74135,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               date: this.props.lastConvertedDate,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 84
+                lineNumber: 87
               }
             }),
             _react3.default.createElement(_Buttons.ClearButton, {
@@ -74139,7 +74143,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               onPress: this.handleSwapCurrency,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 90
+                lineNumber: 93
               }
             })
           )
@@ -74156,7 +74160,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     amount: _propTypes2.default.number,
     conversionRate: _propTypes2.default.number,
     isFetching: _propTypes2.default.bool,
-    lastConvertedDate: _propTypes2.default.object
+    lastConvertedDate: _propTypes2.default.object,
+    primaryColor: _propTypes2.default.string
   }, _temp2));
 
   var mapStateToProps = function mapStateToProps(state) {
@@ -74170,7 +74175,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       amount: state.currencies.amount,
       conversionRate: rates[quoteCurrency] || 0,
       isFetching: conversionSelector.isFetching,
-      lastConvertedDate: conversionSelector.date ? new Date(conversionSelector.date) : new Date()
+      lastConvertedDate: conversionSelector.date ? new Date(conversionSelector.date) : new Date(),
+      primaryColor: state.theme.primaryColor
     };
   };
 
@@ -74218,7 +74224,16 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   var Container = function Container(_ref) {
-    var children = _ref.children;
+    var children = _ref.children,
+        backgroundColor = _ref.backgroundColor;
+    var containerStyles = [_styles2.default.container];
+
+    if (backgroundColor) {
+      containerStyles.push({
+        backgroundColor: backgroundColor
+      });
+    }
+
     return _react2.default.createElement(
       _reactNative.TouchableWithoutFeedback,
       {
@@ -74227,16 +74242,16 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 13
         }
       },
       _react2.default.createElement(
         _reactNative.View,
         {
-          style: _styles2.default.container,
+          style: containerStyles,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 9
+            lineNumber: 14
           }
         },
         children
@@ -74245,7 +74260,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   Container.propTypes = {
-    children: _propTypes2.default.any
+    children: _propTypes2.default.any,
+    backgroundColor: _propTypes2.default.string
   };
   exports.default = Container;
 },607,[295,112,12,608],"app/components/Container/Container.js");
@@ -74301,13 +74317,19 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Logo/Logo.js";
-
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _reactNative = _require(_dependencyMap[2], "react-native");
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Logo/Logo.js";
 
-  var _styles = _require(_dependencyMap[3], "./styles");
+  var _propTypes = _require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = _require(_dependencyMap[3], "react-native");
+
+  var _styles = _require(_dependencyMap[4], "./styles");
 
   var _styles2 = _interopRequireDefault(_styles);
 
@@ -74340,7 +74362,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var ANIMATION_DURATION = 250;
 
-  var Logo = _wrapComponent("Logo")(function (_Component) {
+  var Logo = _wrapComponent("Logo")((_temp = _class = function (_Component) {
     _inherits(Logo, _Component);
 
     function Logo(props) {
@@ -74348,69 +74370,65 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
       var _this = _possibleConstructorReturn(this, (Logo.__proto__ || Object.getPrototypeOf(Logo)).call(this, props));
 
-      _this.keyboardShow = function () {
-        _reactNative.Animated.parallel([_reactNative.Animated.timing(_this.containerImageWidth, {
+      _this.keyboardWillShow = function () {
+        _reactNative.Animated.parallel([_reactNative.Animated.timing(_this.state.containerImageWidth, {
           toValue: _styles2.default.$smallContainerSize,
           duration: ANIMATION_DURATION
-        }), _reactNative.Animated.timing(_this.imageWidth, {
+        }), _reactNative.Animated.timing(_this.state.imageWidth, {
           toValue: _styles2.default.$smallImageSize,
           duration: ANIMATION_DURATION
         })]).start();
       };
 
-      _this.keyboardHide = function () {
-        _reactNative.Animated.parallel([_reactNative.Animated.timing(_this.containerImageWidth, {
+      _this.keyboardWillHide = function () {
+        _reactNative.Animated.parallel([_reactNative.Animated.timing(_this.state.containerImageWidth, {
           toValue: _styles2.default.$largeContainerSize,
           duration: ANIMATION_DURATION
-        }), _reactNative.Animated.timing(_this.imageWidth, {
+        }), _reactNative.Animated.timing(_this.state.imageWidth, {
           toValue: _styles2.default.$largeImageSize,
           duration: ANIMATION_DURATION
         })]).start();
       };
 
-      _this.containerImageWidth = new _reactNative.Animated.Value(_styles2.default.$largeContainerSize);
-      _this.imageWidth = new _reactNative.Animated.Value(_styles2.default.$largeImageSize);
+      _this.state = {
+        containerImageWidth: new _reactNative.Animated.Value(_styles2.default.$largeContainerSize),
+        imageWidth: new _reactNative.Animated.Value(_styles2.default.$largeImageSize)
+      };
       return _this;
     }
 
     _createClass(Logo, [{
-      key: "componentWillMount",
-      value: function componentWillMount() {
-        var showListener = "keyboardWillShow";
-        var hideListener = "keyboardWillHide";
-
-        if (_reactNative.Platform.OS === "android") {
-          showListener = "keyboardDidShow";
-          hideListener = "keyboardDidHide";
-        }
-
-        this.keyboardShowListener = _reactNative.Keyboard.addListener(showListener, this.keyboardShow);
-        this.keyboardHideListener = _reactNative.Keyboard.addListener(hideListener, this.keyboardHide);
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        var name = _reactNative.Platform.OS === 'ios' ? 'Will' : 'Did';
+        this.keyboardDidShowListener = _reactNative.Keyboard.addListener("keyboard" + name + "Show", this.keyboardWillShow);
+        this.keyboardDidHideListener = _reactNative.Keyboard.addListener("keyboard" + name + "Hide", this.keyboardWillHide);
       }
     }, {
       key: "componentWillUnmount",
       value: function componentWillUnmount() {
-        this.keyboardShowListener.remove();
-        this.keyboardHideListener.remove();
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
       }
     }, {
       key: "render",
       value: function render() {
         var containerImageStyles = [_styles2.default.containerImage, {
-          width: this.containerImageWidth,
-          height: this.containerImageWidth
+          width: this.state.containerImageWidth,
+          height: this.state.containerImageWidth
         }];
         var imageStyles = [_styles2.default.logo, {
-          width: this.imageWidth,
-          height: this.imageWidth
-        }];
+          width: this.state.imageWidth
+        }, this.props.tintColor ? {
+          tintColor: this.props.tintColor
+        } : null];
         return _react3.default.createElement(
           _reactNative.View,
           {
             style: _styles2.default.container,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 83
+              lineNumber: 78
             }
           },
           _react3.default.createElement(
@@ -74419,25 +74437,25 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               style: containerImageStyles,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 84
+                lineNumber: 79
               }
             },
             _react3.default.createElement(_reactNative.Animated.Image, {
               resizeMode: "contain",
               style: [_reactNative.StyleSheet.absoluteFill, containerImageStyles],
-              source: _require(_dependencyMap[4], './images/background.png'),
+              source: _require(_dependencyMap[5], './images/background.png'),
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 85
+                lineNumber: 80
               }
             }),
             _react3.default.createElement(_reactNative.Animated.Image, {
               resizeMode: "contain",
               style: imageStyles,
-              source: _require(_dependencyMap[5], './images/logo.png'),
+              source: _require(_dependencyMap[6], './images/logo.png'),
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 90
+                lineNumber: 85
               }
             })
           ),
@@ -74447,7 +74465,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               style: _styles2.default.text,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 96
+                lineNumber: 91
               }
             },
             "Currency Converter"
@@ -74457,10 +74475,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }]);
 
     return Logo;
-  }(_react2.Component));
+  }(_react2.Component), _class.propTypes = {
+    tintColor: _propTypes2.default.string
+  }, _temp));
 
   exports.default = Logo;
-},610,[112,131,12,611,612,613],"app/components/Logo/Logo.js");
+},610,[112,131,295,12,611,612,613],"app/components/Logo/Logo.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74563,26 +74583,30 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
-  var _styles = _require(_dependencyMap[3], "./styles");
-
-  var _styles2 = _interopRequireDefault(_styles);
-
-  var _color = _require(_dependencyMap[4], "color");
+  var _color = _require(_dependencyMap[3], "color");
 
   var _color2 = _interopRequireDefault(_color);
+
+  var _styles = _require(_dependencyMap[4], "./styles");
+
+  var _styles2 = _interopRequireDefault(_styles);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   var InputWithButton = function InputWithButton(props) {
-    var onPress = props.onPress,
-        buttonText = props.buttonText,
-        _props$editable = props.editable,
-        editable = _props$editable === undefined ? true : _props$editable;
-    var containerStyles = [_styles2.default.container];
     var underlayColor = (0, _color2.default)(_styles2.default.$buttonBackgroundColorBase).darken(_styles2.default.$buttonBackgroundColorModifier);
+    var containerStyles = [_styles2.default.container];
 
-    if (editable === false) {
+    if (props.editable === false) {
       containerStyles.push(_styles2.default.containerDisabled);
+    }
+
+    var buttonTextStyles = [_styles2.default.buttonText];
+
+    if (props.textColor) {
+      buttonTextStyles.push({
+        color: props.textColor
+      });
     }
 
     return _react2.default.createElement(
@@ -74591,45 +74615,46 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         style: containerStyles,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 24
         }
       },
       _react2.default.createElement(
         _reactNative.TouchableHighlight,
         {
+          onPress: props.onPress,
           style: _styles2.default.buttonContainer,
           underlayColor: underlayColor,
-          onPress: onPress,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 21
+            lineNumber: 25
           }
         },
         _react2.default.createElement(
           _reactNative.Text,
           {
-            style: _styles2.default.buttonText,
+            style: buttonTextStyles,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 26
+              lineNumber: 30
             }
           },
-          buttonText
+          props.buttonText
         )
       ),
       _react2.default.createElement(_reactNative.View, {
-        style: _styles2.default.border,
+        style: _styles2.default.separator,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 32
         }
       }),
       _react2.default.createElement(_reactNative.TextInput, _extends({
-        style: _styles2.default.input
+        style: _styles2.default.input,
+        underlineColorAndroid: "transparent"
       }, props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 33
         }
       }))
     );
@@ -74638,10 +74663,11 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   InputWithButton.propTypes = {
     onPress: _propTypes2.default.func,
     buttonText: _propTypes2.default.string,
-    editable: _propTypes2.default.bool
+    editable: _propTypes2.default.bool,
+    textColor: _propTypes2.default.string
   };
   exports.default = InputWithButton;
-},615,[295,112,12,616,617],"app/components/TextInput/InputWithButton.js");
+},615,[295,112,12,617,616],"app/components/TextInput/InputWithButton.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81077,7 +81103,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 38
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -81085,7 +81111,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "light-content",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 39
             }
           }),
           _react3.default.createElement(_reactNative.FlatList, {
@@ -81098,9 +81124,10 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 onPress: function onPress() {
                   return _this2.handlePress(item);
                 },
+                iconBackground: _this2.props.primaryColor,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 42
+                  lineNumber: 43
                 }
               });
             },
@@ -81110,7 +81137,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             ItemSeparatorComponent: _List.Separator,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 39
+              lineNumber: 40
             }
           })
         );
@@ -81122,13 +81149,15 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     navigation: _propTypes2.default.object,
     dispatch: _propTypes2.default.func,
     baseCurrency: _propTypes2.default.string,
-    quoteCurrency: _propTypes2.default.string
+    quoteCurrency: _propTypes2.default.string,
+    primaryColor: _propTypes2.default.string
   }, _temp2));
 
   var mapStateToProps = function mapStateToProps(state) {
     return {
       baseCurrency: state.currencies.baseCurrency,
-      quoteCurrency: state.currencies.quoteCurrency
+      quoteCurrency: state.currencies.quoteCurrency,
+      primaryColor: state.theme.primaryColor
     };
   };
 
@@ -87029,12 +87058,17 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _currencies2 = _interopRequireDefault(_currencies);
 
+  var _theme = _require(_dependencyMap[2], "./theme");
+
+  var _theme2 = _interopRequireDefault(_theme);
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   exports.default = (0, _redux.combineReducers)({
-    currencies: _currencies2.default
+    currencies: _currencies2.default,
+    theme: _theme2.default
   });
-},720,[522,721],"app/reducers/index.js");
+},720,[522,721,723],"app/reducers/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87154,5 +87188,35 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         };
     };
 },722,[],"app/actions/theme.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _theme = _require(_dependencyMap[0], "../actions/theme");
+
+  var initialState = {
+    primaryColor: "#4F6D7A"
+  };
+
+  var reducer = function reducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    switch (action.type) {
+      case _theme.CHANGE_PRIMARY_COLOR:
+        return _extends({}, state, {
+          primaryColor: action.color
+        });
+
+      default:
+        return state;
+    }
+  };
+
+  exports.default = reducer;
+},723,[722],"app/reducers/theme.js");
 require(23);
 require(11);//# sourceMappingURL=index.map
