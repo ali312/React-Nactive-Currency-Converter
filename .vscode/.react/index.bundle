@@ -73991,7 +73991,9 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _Header = _require(_dependencyMap[10], "../components/Header");
 
-  var _currencies = _require(_dependencyMap[11], "../actions/currencies");
+  var _Alert = _require(_dependencyMap[11], "../components/Alert");
+
+  var _currencies = _require(_dependencyMap[12], "../actions/currencies");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -74062,6 +74064,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         this.props.dispatch((0, _currencies.getInitialConversion)());
       }
     }, {
+      key: "componentWillReceiveProps",
+      value: function componentWillReceiveProps(nextProps) {
+        if (nextProps.currencyError && !this.props.currencyError) {
+          this.props.alertWithType("error", "Error", nextProps.currencyError);
+        }
+      }
+    }, {
       key: "render",
       value: function render() {
         var quotePrice = (this.props.amount * this.props.conversionRate).toFixed(2);
@@ -74076,7 +74085,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             backgroundColor: this.props.primaryColor,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 71
+              lineNumber: 84
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -74084,14 +74093,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "light-content",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 72
+              lineNumber: 85
             }
           }),
           _react3.default.createElement(_Header.Header, {
             onPress: this.handleOptionsPress,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 73
+              lineNumber: 86
             }
           }),
           _react3.default.createElement(
@@ -74100,14 +74109,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               behavior: "padding",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 74
+                lineNumber: 87
               }
             },
             _react3.default.createElement(_Logo.Logo, {
               tintColor: this.props.primaryColor,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 75
+                lineNumber: 88
               }
             }),
             _react3.default.createElement(_TextInput.InputWithButton, {
@@ -74119,7 +74128,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               textColor: this.props.primaryColor,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 76
+                lineNumber: 89
               }
             }),
             _react3.default.createElement(_TextInput.InputWithButton, {
@@ -74130,7 +74139,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               textColor: this.props.primaryColor,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 84
+                lineNumber: 97
               }
             }),
             _react3.default.createElement(_Text.LastConverted, {
@@ -74140,7 +74149,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               date: this.props.lastConvertedDate,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 91
+                lineNumber: 104
               }
             }),
             _react3.default.createElement(_Buttons.ClearButton, {
@@ -74148,7 +74157,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               onPress: this.handleSwapCurrency,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 97
+                lineNumber: 110
               }
             })
           )
@@ -74166,7 +74175,9 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     conversionRate: _propTypes2.default.number,
     isFetching: _propTypes2.default.bool,
     lastConvertedDate: _propTypes2.default.object,
-    primaryColor: _propTypes2.default.string
+    primaryColor: _propTypes2.default.string,
+    currencyError: _propTypes2.default.string,
+    alertWithType: _propTypes2.default.func
   }, _temp2));
 
   var mapStateToProps = function mapStateToProps(state) {
@@ -74181,12 +74192,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       conversionRate: rates[quoteCurrency] || 0,
       isFetching: conversionSelector.isFetching,
       lastConvertedDate: conversionSelector.date ? new Date(conversionSelector.date) : new Date(),
-      primaryColor: state.theme.primaryColor
+      primaryColor: state.theme.primaryColor,
+      currencyError: state.currencies.error
     };
   };
 
-  exports.default = (0, _reactRedux.connect)(mapStateToProps)(Home);
-},605,[112,131,12,295,511,606,609,614,625,629,633,637],"app/screens/Home.js");
+  exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _Alert.connectAlert)(Home));
+},605,[112,131,12,295,511,606,609,614,625,629,633,694,637],"app/screens/Home.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
