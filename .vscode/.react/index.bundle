@@ -87024,15 +87024,17 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _currencies = _require(_dependencyMap[0], "../actions/currencies");
 
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
   var initialState = {
-    baseCurrency: 'USD',
-    quoteCurrency: 'GBP',
+    baseCurrency: "USD",
+    quoteCurrency: "GBP",
     amount: 100,
     conversions: {
       USD: {
         isFetching: false,
-        base: 'USD',
-        date: '2017-05-31',
+        base: "USD",
+        date: "2017-05-31",
         rates: {
           AUD: 1.3416,
           BGN: 1.743,
@@ -87070,6 +87072,20 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }
   };
 
+  var setConversions = function setConversions(state, action) {
+    var conversion = {
+      isFetching: true,
+      date: '',
+      rates: {}
+    };
+
+    if (state.conversions[action.currency]) {
+      conversion = state.conversions[action.currency];
+    }
+
+    return _extends({}, state.conversions, _defineProperty({}, action.currency, conversion));
+  };
+
   var reducer = function reducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
@@ -87084,6 +87100,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         return _extends({}, state, {
           baseCurrency: state.quoteCurrency,
           quoteCurrency: state.baseCurrency
+        });
+
+      case _currencies.CHANGE_BASE_CURRENCY:
+        return _extends({}, state, {
+          baseCurrency: action.currency,
+          conversions: setConversions(state, action)
+        });
+
+      case _currencies.CHANGE_QUOTE_CURRENCY:
+        return _extends({}, state, {
+          quoteCurrency: action.currency,
+          conversions: setConversions(state, action)
         });
 
       default:
