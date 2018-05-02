@@ -9,7 +9,7 @@ import { ClearButton } from "../components/Buttons";
 import { LastConverted } from "../components/Text";
 import { Header } from "../components/Header";
 
-import { swapCurrency, changeCurrencyAmount } from "../actions/currencies";
+import { swapCurrency, changeCurrencyAmount, getInitialConversion } from "../actions/currencies";
 
 const TEMP_CONVERSION_RATE = 0.7974;
 const TEMP_CONVERSION_DATE = new Date();
@@ -26,6 +26,10 @@ class Home extends Component {
     lastConvertedDate: PropTypes.object,
     primaryColor: PropTypes.string
   };
+
+  componentWillMount() {
+    this.props.dispatch(getInitialConversion());
+  }
 
   handleChangeText = amount => {
     // console.log(changeCurrencyAmount(amount));
