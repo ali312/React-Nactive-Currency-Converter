@@ -81031,8 +81031,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     };
   }
 
-  var TEMP_CURRENT_CURRENCY = "CAD";
-
   var CurrencyList = _wrapComponent("CurrencyList")((_temp2 = _class = function (_Component) {
     _inherits(CurrencyList, _Component);
 
@@ -81050,7 +81048,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CurrencyList.__proto__ || Object.getPrototypeOf(CurrencyList)).call.apply(_ref, [this].concat(args))), _this), _this.handlePress = function (currency) {
         var type = _this.props.navigation.state.params.type;
 
-        if (type === 'base') {
+        if (type === "base") {
           _this.props.dispatch((0, _currencies3.changeBaseCurrency)(currency));
         } else {
           _this.props.dispatch((0, _currencies3.changeQuoteCurrency)(currency));
@@ -81065,6 +81063,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       value: function render() {
         var _this2 = this;
 
+        var comparisonCurrency = this.props.baseCurrency;
+
+        if (this.props.navigation.state.params.type === "quote") {
+          comparisonCurrency = this.props.quoteCurrency;
+        }
+
         return _react3.default.createElement(
           _reactNative.View,
           {
@@ -81073,7 +81077,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 37
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -81081,7 +81085,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "light-content",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 33
+              lineNumber: 38
             }
           }),
           _react3.default.createElement(_reactNative.FlatList, {
@@ -81090,13 +81094,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               var item = _ref2.item;
               return _react3.default.createElement(_List.ListItem, {
                 text: item,
-                selected: item === TEMP_CURRENT_CURRENCY,
+                selected: item === comparisonCurrency,
                 onPress: function onPress() {
                   return _this2.handlePress(item);
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 37
+                  lineNumber: 42
                 }
               });
             },
@@ -81106,7 +81110,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             ItemSeparatorComponent: _List.Separator,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 34
+              lineNumber: 39
             }
           })
         );
@@ -81116,10 +81120,19 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return CurrencyList;
   }(_react2.Component), _class.propTypes = {
     navigation: _propTypes2.default.object,
-    dispatch: _propTypes2.default.func
+    dispatch: _propTypes2.default.func,
+    baseCurrency: _propTypes2.default.string,
+    quoteCurrency: _propTypes2.default.string
   }, _temp2));
 
-  exports.default = (0, _reactRedux.connect)()(CurrencyList);
+  var mapStateToProps = function mapStateToProps(state) {
+    return {
+      baseCurrency: state.currencies.baseCurrency,
+      quoteCurrency: state.currencies.quoteCurrency
+    };
+  };
+
+  exports.default = (0, _reactRedux.connect)(mapStateToProps)(CurrencyList);
 },638,[112,131,12,295,511,639,645,637],"app/screens/CurrencyList.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
