@@ -23,7 +23,7 @@ class Home extends Component {
     amount: PropTypes.number,
     conversionRate: PropTypes.number,
     isFetching: PropTypes.bool,
-    lastConvertedDate: PropTypes.object,
+    lastConvertedDate: PropTypes.object
   };
 
   handleChangeText = amount => {
@@ -43,11 +43,17 @@ class Home extends Component {
   };
 
   handlePressBaseCurrency = () => {
-    this.props.navigation.navigate("CurrencyList", { title: "Base Currency" });
+    this.props.navigation.navigate("CurrencyList", {
+      title: "Base Currency",
+      type: "base"
+    });
   };
 
   handlePressQuoteCurrency = () => {
-    this.props.navigation.navigate("CurrencyList", { title: "Quote Currency" });
+    this.props.navigation.navigate("CurrencyList", {
+      title: "Quote Currency",
+      type: "quote"
+    });
   };
 
   render() {
@@ -103,7 +109,9 @@ const mapStateToProps = state => {
     amount: state.currencies.amount,
     conversionRate: rates[quoteCurrency] || 0,
     isFetching: conversionSelector.isFetching,
-    lastConvertedDate: conversionSelector.date ? new Date(conversionSelector.date) : new Date()
+    lastConvertedDate: conversionSelector.date
+      ? new Date(conversionSelector.date)
+      : new Date()
   };
 };
 

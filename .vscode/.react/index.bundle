@@ -74045,11 +74045,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         _this.props.dispatch((0, _currencies.swapCurrency)());
       }, _this.handlePressBaseCurrency = function () {
         _this.props.navigation.navigate("CurrencyList", {
-          title: "Base Currency"
+          title: "Base Currency",
+          type: "base"
         });
       }, _this.handlePressQuoteCurrency = function () {
         _this.props.navigation.navigate("CurrencyList", {
-          title: "Quote Currency"
+          title: "Quote Currency",
+          type: "quote"
         });
       }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -74068,7 +74070,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60
+              lineNumber: 66
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -74076,14 +74078,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "light-content",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 61
+              lineNumber: 67
             }
           }),
           _react3.default.createElement(_Header.Header, {
             onPress: this.handleOptionsPress,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 62
+              lineNumber: 68
             }
           }),
           _react3.default.createElement(
@@ -74092,13 +74094,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               behavior: "padding",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 63
+                lineNumber: 69
               }
             },
             _react3.default.createElement(_Logo.Logo, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 64
+                lineNumber: 70
               }
             }),
             _react3.default.createElement(_TextInput.InputWithButton, {
@@ -74109,7 +74111,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               onChangeText: this.handleChangeText,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 65
+                lineNumber: 71
               }
             }),
             _react3.default.createElement(_TextInput.InputWithButton, {
@@ -74119,7 +74121,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               value: quotePrice,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 72
+                lineNumber: 78
               }
             }),
             _react3.default.createElement(_Text.LastConverted, {
@@ -74129,7 +74131,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               date: this.props.lastConvertedDate,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 78
+                lineNumber: 84
               }
             }),
             _react3.default.createElement(_Buttons.ClearButton, {
@@ -74137,7 +74139,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               onPress: this.handleSwapCurrency,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 84
+                lineNumber: 90
               }
             })
           )
@@ -80937,6 +80939,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   });
   var SWAP_CURRENCY = exports.SWAP_CURRENCY = "SWAP_CURRENCY";
   var CHANGE_CURRENCY_AMOUNT = exports.CHANGE_CURRENCY_AMOUNT = "CHANGE_CURRENCY_AMOUNT";
+  var CHANGE_BASE_CURRENCY = exports.CHANGE_BASE_CURRENCY = "CHANGE_BASE_CURRENCY";
+  var CHANGE_QUOTE_CURRENCY = exports.CHANGE_QUOTE_CURRENCY = 'CHANGE_QUOTE_CURRENCY';
 
   var swapCurrency = exports.swapCurrency = function swapCurrency() {
     return {
@@ -80948,6 +80952,20 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return {
       type: CHANGE_CURRENCY_AMOUNT,
       amount: parseFloat(amount)
+    };
+  };
+
+  var changeBaseCurrency = exports.changeBaseCurrency = function changeBaseCurrency(currency) {
+    return {
+      type: CHANGE_BASE_CURRENCY,
+      currency: currency
+    };
+  };
+
+  var changeQuoteCurrency = exports.changeQuoteCurrency = function changeQuoteCurrency(currency) {
+    return {
+      type: CHANGE_QUOTE_CURRENCY,
+      currency: currency
     };
   };
 },637,[],"app/actions/currencies.js");
@@ -80976,11 +80994,15 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _propTypes2 = _interopRequireDefault(_propTypes);
 
-  var _List = _require(_dependencyMap[4], "../components/List");
+  var _reactRedux = _require(_dependencyMap[4], "react-redux");
 
-  var _currencies = _require(_dependencyMap[5], "../data/currencies");
+  var _List = _require(_dependencyMap[5], "../components/List");
+
+  var _currencies = _require(_dependencyMap[6], "../data/currencies");
 
   var _currencies2 = _interopRequireDefault(_currencies);
+
+  var _currencies3 = _require(_dependencyMap[7], "../actions/currencies");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81009,7 +81031,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     };
   }
 
-  var TEMP_CURRENT_CURRENCY = 'CAD';
+  var TEMP_CURRENT_CURRENCY = "CAD";
 
   var CurrencyList = _wrapComponent("CurrencyList")((_temp2 = _class = function (_Component) {
     _inherits(CurrencyList, _Component);
@@ -81025,7 +81047,15 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         args[_key] = arguments[_key];
       }
 
-      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CurrencyList.__proto__ || Object.getPrototypeOf(CurrencyList)).call.apply(_ref, [this].concat(args))), _this), _this.handlePress = function () {
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CurrencyList.__proto__ || Object.getPrototypeOf(CurrencyList)).call.apply(_ref, [this].concat(args))), _this), _this.handlePress = function (currency) {
+        var type = _this.props.navigation.state.params.type;
+
+        if (type === 'base') {
+          _this.props.dispatch((0, _currencies3.changeBaseCurrency)(currency));
+        } else {
+          _this.props.dispatch((0, _currencies3.changeQuoteCurrency)(currency));
+        }
+
         _this.props.navigation.goBack(null);
       }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -81043,7 +81073,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 32
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -81051,7 +81081,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "light-content",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 22
+              lineNumber: 33
             }
           }),
           _react3.default.createElement(_reactNative.FlatList, {
@@ -81061,10 +81091,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               return _react3.default.createElement(_List.ListItem, {
                 text: item,
                 selected: item === TEMP_CURRENT_CURRENCY,
-                onPress: _this2.handlePress,
+                onPress: function onPress() {
+                  return _this2.handlePress(item);
+                },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 26
+                  lineNumber: 37
                 }
               });
             },
@@ -81074,7 +81106,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             ItemSeparatorComponent: _List.Separator,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 23
+              lineNumber: 34
             }
           })
         );
@@ -81083,11 +81115,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     return CurrencyList;
   }(_react2.Component), _class.propTypes = {
-    navigation: _propTypes2.default.object
+    navigation: _propTypes2.default.object,
+    dispatch: _propTypes2.default.func
   }, _temp2));
 
-  exports.default = CurrencyList;
-},638,[112,131,12,295,639,645],"app/screens/CurrencyList.js");
+  exports.default = (0, _reactRedux.connect)()(CurrencyList);
+},638,[112,131,12,295,511,639,645,637],"app/screens/CurrencyList.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
