@@ -85899,15 +85899,19 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
-  var _propTypes = _require(_dependencyMap[3], "prop-types");
+  var _reactRedux = _require(_dependencyMap[3], "react-redux");
+
+  var _propTypes = _require(_dependencyMap[4], "prop-types");
 
   var _propTypes2 = _interopRequireDefault(_propTypes);
 
-  var _reactNativeExtendedStylesheet = _require(_dependencyMap[4], "react-native-extended-stylesheet");
+  var _reactNativeExtendedStylesheet = _require(_dependencyMap[5], "react-native-extended-stylesheet");
 
   var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
 
-  var _List = _require(_dependencyMap[5], "../components/List");
+  var _List = _require(_dependencyMap[6], "../components/List");
+
+  var _theme = _require(_dependencyMap[7], "../actions/theme");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85958,6 +85962,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }
 
       return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Themes.__proto__ || Object.getPrototypeOf(Themes)).call.apply(_ref, [this].concat(args))), _this), _this.handlePressTheme = function (color) {
+        _this.props.dispatch((0, _theme.changePrimaryColor)(color));
+
         _this.props.navigation.goBack(null);
       }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -85972,7 +85978,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 27
+              lineNumber: 31
             }
           },
           _react3.default.createElement(_reactNative.StatusBar, {
@@ -85980,7 +85986,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             barStyle: "default",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 28
+              lineNumber: 32
             }
           }),
           _react3.default.createElement(_List.ListItem, {
@@ -85993,13 +85999,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             iconBackground: styles.$blue,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 33
             }
           }),
           _react3.default.createElement(_List.Separator, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 40
             }
           }),
           _react3.default.createElement(_List.ListItem, {
@@ -86012,13 +86018,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             iconBackground: styles.$orange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 41
             }
           }),
           _react3.default.createElement(_List.Separator, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 48
             }
           }),
           _react3.default.createElement(_List.ListItem, {
@@ -86031,13 +86037,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             iconBackground: styles.$green,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 45
+              lineNumber: 49
             }
           }),
           _react3.default.createElement(_List.Separator, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 52
+              lineNumber: 56
             }
           }),
           _react3.default.createElement(_List.ListItem, {
@@ -86050,13 +86056,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             iconBackground: styles.$purple,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 53
+              lineNumber: 57
             }
           }),
           _react3.default.createElement(_List.Separator, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60
+              lineNumber: 64
             }
           })
         );
@@ -86065,11 +86071,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     return Themes;
   }(_react2.Component), _class.propTypes = {
-    navigation: _propTypes2.default.object
+    navigation: _propTypes2.default.object,
+    dispatch: _propTypes2.default.func
   }, _temp2));
 
-  exports.default = Themes;
-},712,[112,131,12,295,495,639],"app/screens/Themes.js");
+  exports.default = (0, _reactRedux.connect)()(Themes);
+},712,[112,131,12,511,295,495,639,722],"app/screens/Themes.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87134,5 +87141,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   exports.default = reducer;
 },721,[637],"app/reducers/currencies.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    var CHANGE_PRIMARY_COLOR = exports.CHANGE_PRIMARY_COLOR = 'CHANGE_PRIMARY_COLOR';
+
+    var changePrimaryColor = exports.changePrimaryColor = function changePrimaryColor(color) {
+        return {
+            type: CHANGE_PRIMARY_COLOR,
+            color: color
+        };
+    };
+},722,[],"app/actions/theme.js");
 require(23);
 require(11);//# sourceMappingURL=index.map
