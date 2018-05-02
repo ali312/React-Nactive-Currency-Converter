@@ -89820,7 +89820,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var _marked = regeneratorRuntime.mark(fetchLatestConversionRates),
       _marked2 = regeneratorRuntime.mark(rootSaga);
 
-  function fetchLatestConversionRates() {
+  function fetchLatestConversionRates(action) {
     return regeneratorRuntime.wrap(function fetchLatestConversionRates$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -89845,6 +89845,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             return (0, _effects.takeEvery)(_currencies.GET_INITIAL_CONVERSION, fetchLatestConversionRates);
 
           case 2:
+            _context2.next = 4;
+            return (0, _effects.takeEvery)(_currencies.SWAP_CURRENCY, fetchLatestConversionRates);
+
+          case 4:
+            _context2.next = 6;
+            return (0, _effects.takeEvery)(_currencies.CHANGE_BASE_CURRENCY, fetchLatestConversionRates);
+
+          case 6:
+            _context2.next = 8;
+            return (0, _effects.takeEvery)(_currencies.CHANGE_QUOTE_CURRENCY, fetchLatestConversionRates);
+
+          case 8:
           case "end":
             return _context2.stop();
         }
