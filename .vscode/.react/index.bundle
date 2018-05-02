@@ -60540,7 +60540,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       )
     );
   };
-},494,[112,495,511,539,713,694],"app/index.js");
+},494,[112,495,511,539,714,694],"app/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74568,7 +74568,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   exports.InputWithButton = _InputWithButton2.default;
   exports.styles = _styles2.default;
-},614,[615,616],"app/components/TextInput/index.js");
+},614,[615,624],"app/components/TextInput/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74672,65 +74672,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     textColor: _propTypes2.default.string
   };
   exports.default = InputWithButton;
-},615,[295,112,12,617,616],"app/components/TextInput/InputWithButton.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _reactNativeExtendedStylesheet = _require(_dependencyMap[0], "react-native-extended-stylesheet");
-
-  var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
-
-  var _reactNative = _require(_dependencyMap[1], "react-native");
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var INPUT_HEIGHT = 49;
-  var BORDER_RADIUS = 4;
-  exports.default = _reactNativeExtendedStylesheet2.default.create({
-    $buttonBackgroundColorBase: "$white",
-    $buttonBackgroundColorModifier: 0.1,
-    container: {
-      backgroundColor: "$white",
-      width: "90%",
-      height: INPUT_HEIGHT,
-      borderRadius: BORDER_RADIUS,
-      flexDirection: "row",
-      alignItems: "center",
-      marginVertical: 11
-    },
-    containerDisabled: {
-      backgroundColor: "$lightGray"
-    },
-    buttonContainer: {
-      height: INPUT_HEIGHT,
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "$white",
-      borderTopLeftRadius: BORDER_RADIUS,
-      borderBottomLeftRadius: BORDER_RADIUS
-    },
-    buttonText: {
-      fontWeight: "600",
-      fontSize: 20,
-      paddingHorizontal: 16,
-      color: "$primaryBlue"
-    },
-    input: {
-      height: INPUT_HEIGHT,
-      flex: 1,
-      fontSize: 18,
-      paddingHorizontal: 8,
-      color: "$inputText"
-    },
-    border: {
-      height: INPUT_HEIGHT,
-      width: _reactNative.StyleSheet.hairlineWidth,
-      backgroundColor: "$border"
-    }
-  });
-},616,[495,12],"app/components/TextInput/styles.js");
+},615,[295,112,12,616,624],"app/components/TextInput/InputWithButton.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	'use strict';
 
@@ -75148,7 +75090,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 	}
 
 	module.exports = Color;
-},617,[618,622],"node_modules/color/index.js");
+},616,[617,621],"node_modules/color/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	var colorNames = _require(_dependencyMap[0], 'color-name');
 
@@ -75363,7 +75305,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 		var str = num.toString(16).toUpperCase();
 		return str.length < 2 ? '0' + str : str;
 	}
-},618,[619,620],"node_modules/color-string/index.js");
+},617,[618,619],"node_modules/color-string/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	'use strict';
 
@@ -75517,7 +75459,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 		"yellow": [255, 255, 0],
 		"yellowgreen": [154, 205, 50]
 	};
-},619,[],"node_modules/color-name/index.js");
+},618,[],"node_modules/color-name/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	'use strict';
 
@@ -75547,7 +75489,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 			return fn(swizzle(arguments));
 		};
 	};
-},620,[621],"node_modules/simple-swizzle/index.js");
+},619,[620],"node_modules/simple-swizzle/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	'use strict';
 
@@ -75558,7 +75500,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
 		return obj instanceof Array || Array.isArray(obj) || obj.length >= 0 && (obj.splice instanceof Function || Object.getOwnPropertyDescriptor(obj, obj.length - 1) && obj.constructor.name !== 'String');
 	};
-},621,[],"node_modules/simple-swizzle/node_modules/is-arrayish/index.js");
+},620,[],"node_modules/simple-swizzle/node_modules/is-arrayish/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	var conversions = _require(_dependencyMap[0], './conversions');
 
@@ -75632,7 +75574,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 		});
 	});
 	module.exports = convert;
-},622,[623,624],"node_modules/color-convert/index.js");
+},621,[622,623],"node_modules/color-convert/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	var cssKeywords = _require(_dependencyMap[0], 'color-name');
 
@@ -76507,7 +76449,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 		var val = (rgb[0] + rgb[1] + rgb[2]) / 3;
 		return [val / 255 * 100];
 	};
-},623,[619],"node_modules/color-convert/conversions.js");
+},622,[618],"node_modules/color-convert/conversions.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
 	var conversions = _require(_dependencyMap[0], './conversions');
 
@@ -76588,7 +76530,65 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
 		return conversion;
 	};
-},624,[623],"node_modules/color-convert/route.js");
+},623,[622],"node_modules/color-convert/route.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _reactNativeExtendedStylesheet = _require(_dependencyMap[0], "react-native-extended-stylesheet");
+
+  var _reactNativeExtendedStylesheet2 = _interopRequireDefault(_reactNativeExtendedStylesheet);
+
+  var _reactNative = _require(_dependencyMap[1], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var INPUT_HEIGHT = 49;
+  var BORDER_RADIUS = 4;
+  exports.default = _reactNativeExtendedStylesheet2.default.create({
+    $buttonBackgroundColorBase: "$white",
+    $buttonBackgroundColorModifier: 0.1,
+    container: {
+      backgroundColor: "$white",
+      width: "90%",
+      height: INPUT_HEIGHT,
+      borderRadius: BORDER_RADIUS,
+      flexDirection: "row",
+      alignItems: "center",
+      marginVertical: 11
+    },
+    containerDisabled: {
+      backgroundColor: "$lightGray"
+    },
+    buttonContainer: {
+      height: INPUT_HEIGHT,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "$white",
+      borderTopLeftRadius: BORDER_RADIUS,
+      borderBottomLeftRadius: BORDER_RADIUS
+    },
+    buttonText: {
+      fontWeight: "600",
+      fontSize: 20,
+      paddingHorizontal: 16,
+      color: "$primaryBlue"
+    },
+    input: {
+      height: INPUT_HEIGHT,
+      flex: 1,
+      fontSize: 18,
+      paddingHorizontal: 8,
+      color: "$inputText"
+    },
+    border: {
+      height: INPUT_HEIGHT,
+      width: _reactNative.StyleSheet.hairlineWidth,
+      backgroundColor: "$border"
+    }
+  });
+},624,[495,12],"app/components/TextInput/styles.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80968,15 +80968,17 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  var SWAP_CURRENCY = exports.SWAP_CURRENCY = "SWAP_CURRENCY";
-  var CHANGE_CURRENCY_AMOUNT = exports.CHANGE_CURRENCY_AMOUNT = "CHANGE_CURRENCY_AMOUNT";
-  var CHANGE_BASE_CURRENCY = exports.CHANGE_BASE_CURRENCY = "CHANGE_BASE_CURRENCY";
+  var CHANGE_CURRENCY_AMOUNT = exports.CHANGE_CURRENCY_AMOUNT = 'CHANGE_CURRENCY_AMOUNT';
+  var SWAP_CURRENCY = exports.SWAP_CURRENCY = 'SWAP_CURRENCY';
+  var CHANGE_BASE_CURRENCY = exports.CHANGE_BASE_CURRENCY = 'CHANGE_BASE_CURRENCY';
   var CHANGE_QUOTE_CURRENCY = exports.CHANGE_QUOTE_CURRENCY = 'CHANGE_QUOTE_CURRENCY';
   var GET_INITIAL_CONVERSION = exports.GET_INITIAL_CONVERSION = 'GET_INITIAL_CONVERSION';
+  var CONVERSION_RESULT = exports.CONVERSION_RESULT = 'CONVERSION_RESULT';
+  var CONVERSION_ERROR = exports.CONVERSION_ERROR = 'CONVERSION_ERROR';
 
-  var swapCurrency = exports.swapCurrency = function swapCurrency() {
+  var getInitialConversion = exports.getInitialConversion = function getInitialConversion() {
     return {
-      type: SWAP_CURRENCY
+      type: GET_INITIAL_CONVERSION
     };
   };
 
@@ -80984,6 +80986,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return {
       type: CHANGE_CURRENCY_AMOUNT,
       amount: parseFloat(amount)
+    };
+  };
+
+  var swapCurrency = exports.swapCurrency = function swapCurrency() {
+    return {
+      type: SWAP_CURRENCY
     };
   };
 
@@ -80998,12 +81006,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return {
       type: CHANGE_QUOTE_CURRENCY,
       currency: currency
-    };
-  };
-
-  var getInitialConversion = exports.getInitialConversion = function getInitialConversion() {
-    return {
-      type: GET_INITIAL_CONVERSION
     };
   };
 },637,[],"app/actions/currencies.js");
@@ -86117,7 +86119,20 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }, _temp2));
 
   exports.default = (0, _reactRedux.connect)()(Themes);
-},712,[112,131,12,511,295,495,639,722],"app/screens/Themes.js");
+},712,[112,131,12,511,295,495,639,713],"app/screens/Themes.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    var CHANGE_PRIMARY_COLOR = exports.CHANGE_PRIMARY_COLOR = 'CHANGE_PRIMARY_COLOR';
+
+    var changePrimaryColor = exports.changePrimaryColor = function changePrimaryColor(color) {
+        return {
+            type: CHANGE_PRIMARY_COLOR,
+            color: color
+        };
+    };
+},713,[],"app/actions/theme.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86153,7 +86168,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var store = (0, _redux.createStore)(_reducers2.default, _redux.applyMiddleware.apply(undefined, middleware));
   sagaMiddleWare.run(_sagas2.default);
   exports.default = store;
-},713,[522,714,724,720,740],"app/config/store.js");
+},714,[522,715,721,737,740],"app/config/store.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -86283,7 +86298,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   exports.createLogger = createLogger;
   exports.logger = defaultLogger;
   exports.default = defaultLogger;
-},714,[715,716,719],"node_modules/redux-logger/lib/index.js");
+},715,[716,717,720],"node_modules/redux-logger/lib/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -86427,7 +86442,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }
     });
   }
-},715,[716,717],"node_modules/redux-logger/lib/core.js");
+},716,[717,718],"node_modules/redux-logger/lib/core.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   "use strict";
 
@@ -86448,7 +86463,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
-},716,[],"node_modules/redux-logger/lib/helpers.js");
+},717,[],"node_modules/redux-logger/lib/helpers.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -86559,7 +86574,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = exports['default'];
-},717,[718],"node_modules/redux-logger/lib/diff.js");
+},718,[719],"node_modules/redux-logger/lib/diff.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   ;
 
@@ -87022,7 +87037,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     });
     return accumulateDiff;
   });
-},718,[],"node_modules/deep-diff/index.js");
+},719,[],"node_modules/deep-diff/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   "use strict";
 
@@ -87068,140 +87083,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     transformer: undefined
   };
   module.exports = exports["default"];
-},719,[],"node_modules/redux-logger/lib/defaults.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _redux = _require(_dependencyMap[0], "redux");
-
-  var _currencies = _require(_dependencyMap[1], "./currencies");
-
-  var _currencies2 = _interopRequireDefault(_currencies);
-
-  var _theme = _require(_dependencyMap[2], "./theme");
-
-  var _theme2 = _interopRequireDefault(_theme);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  exports.default = (0, _redux.combineReducers)({
-    currencies: _currencies2.default,
-    theme: _theme2.default
-  });
-},720,[522,721,723],"app/reducers/index.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-  var _currencies = _require(_dependencyMap[0], "../actions/currencies");
-
-  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-  var initialState = {
-    baseCurrency: "USD",
-    quoteCurrency: "GBP",
-    amount: 100,
-    error: null,
-    conversions: {}
-  };
-
-  var setConversions = function setConversions(state, action) {
-    var conversion = {
-      isFetching: true,
-      date: '',
-      rates: {}
-    };
-
-    if (state.conversions[action.currency]) {
-      conversion = state.conversions[action.currency];
-    }
-
-    return _extends({}, state.conversions, _defineProperty({}, action.currency, conversion));
-  };
-
-  var reducer = function reducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
-    switch (action.type) {
-      case _currencies.CHANGE_CURRENCY_AMOUNT:
-        return _extends({}, state, {
-          amount: action.amount || 0
-        });
-
-      case _currencies.SWAP_CURRENCY:
-        return _extends({}, state, {
-          baseCurrency: state.quoteCurrency,
-          quoteCurrency: state.baseCurrency
-        });
-
-      case _currencies.CHANGE_BASE_CURRENCY:
-        return _extends({}, state, {
-          baseCurrency: action.currency,
-          conversions: setConversions(state, action)
-        });
-
-      case _currencies.CHANGE_QUOTE_CURRENCY:
-        return _extends({}, state, {
-          quoteCurrency: action.currency,
-          conversions: setConversions(state, action)
-        });
-
-      default:
-        return state;
-    }
-  };
-
-  exports.default = reducer;
-},721,[637],"app/reducers/currencies.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    var CHANGE_PRIMARY_COLOR = exports.CHANGE_PRIMARY_COLOR = 'CHANGE_PRIMARY_COLOR';
-
-    var changePrimaryColor = exports.changePrimaryColor = function changePrimaryColor(color) {
-        return {
-            type: CHANGE_PRIMARY_COLOR,
-            color: color
-        };
-    };
-},722,[],"app/actions/theme.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-  var _theme = _require(_dependencyMap[0], "../actions/theme");
-
-  var initialState = {
-    primaryColor: "#4F6D7A"
-  };
-
-  var reducer = function reducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
-    switch (action.type) {
-      case _theme.CHANGE_PRIMARY_COLOR:
-        return _extends({}, state, {
-          primaryColor: action.color
-        });
-
-      default:
-        return state;
-    }
-  };
-
-  exports.default = reducer;
-},723,[722],"app/reducers/theme.js");
+},720,[],"node_modules/redux-logger/lib/defaults.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -87330,7 +87212,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   exports.default = _middleware2.default;
   exports.effects = effects;
   exports.utils = utils;
-},724,[725,733,734,730,726,729,737,738,739],"node_modules/redux-saga/lib/index.js");
+},721,[722,730,731,727,723,726,734,735,736],"node_modules/redux-saga/lib/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -87412,7 +87294,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     return task;
   }
-},725,[726,727],"node_modules/redux-saga/lib/internal/runSaga.js");
+},722,[723,724],"node_modules/redux-saga/lib/internal/runSaga.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -87744,7 +87626,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       };
     };
   };
-},726,[],"node_modules/redux-saga/lib/internal/utils.js");
+},723,[],"node_modules/redux-saga/lib/internal/utils.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -88474,7 +88356,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }, _defineEnumerableProperties(_ref9, _mutatorMap), _ref9;
     }
   }
-},727,[726,728,729,733,734],"node_modules/redux-saga/lib/internal/proc.js");
+},724,[723,725,726,730,731],"node_modules/redux-saga/lib/internal/proc.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   "use strict";
 
@@ -88519,7 +88401,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       exec(task);
     }
   }
-},728,[],"node_modules/redux-saga/lib/internal/scheduler.js");
+},725,[],"node_modules/redux-saga/lib/internal/scheduler.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -88845,7 +88727,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     getContext: createAsEffectType(GET_CONTEXT),
     setContext: createAsEffectType(SET_CONTEXT)
   };
-},729,[726,730],"node_modules/redux-saga/lib/internal/io.js");
+},726,[723,727],"node_modules/redux-saga/lib/internal/io.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -88885,7 +88767,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   exports.takeEveryHelper = _takeEvery2.default;
   exports.takeLatestHelper = _takeLatest2.default;
   exports.throttleHelper = _throttle2.default;
-},730,[731,735,736,726],"node_modules/redux-saga/lib/internal/sagaHelpers/index.js");
+},727,[728,732,733,723],"node_modules/redux-saga/lib/internal/sagaHelpers/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -88937,7 +88819,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }
     }, 'q1', 'takeEvery(' + (0, _fsmIterator.safeName)(patternOrChannel) + ', ' + worker.name + ')');
   }
-},731,[732,729,733],"node_modules/redux-saga/lib/internal/sagaHelpers/takeEvery.js");
+},728,[729,726,730],"node_modules/redux-saga/lib/internal/sagaHelpers/takeEvery.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -88997,7 +88879,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       return next(null, error);
     }, name, true);
   }
-},732,[726],"node_modules/redux-saga/lib/internal/sagaHelpers/fsmIterator.js");
+},729,[723],"node_modules/redux-saga/lib/internal/sagaHelpers/fsmIterator.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -89242,7 +89124,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }
     });
   }
-},733,[726,734,728],"node_modules/redux-saga/lib/internal/channel.js");
+},730,[723,731,725],"node_modules/redux-saga/lib/internal/channel.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   "use strict";
 
@@ -89352,7 +89234,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       return ringBuffer(initialSize, ON_OVERFLOW_EXPAND);
     }
   };
-},734,[726],"node_modules/redux-saga/lib/internal/buffers.js");
+},731,[723],"node_modules/redux-saga/lib/internal/buffers.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -89420,7 +89302,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }
     }, 'q1', 'takeLatest(' + (0, _fsmIterator.safeName)(patternOrChannel) + ', ' + worker.name + ')');
   }
-},735,[732,729,733],"node_modules/redux-saga/lib/internal/sagaHelpers/takeLatest.js");
+},732,[729,726,730],"node_modules/redux-saga/lib/internal/sagaHelpers/takeLatest.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -89499,7 +89381,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }
     }, 'q1', 'throttle(' + (0, _fsmIterator.safeName)(pattern) + ', ' + worker.name + ')');
   }
-},736,[732,729,733,734,726],"node_modules/redux-saga/lib/internal/sagaHelpers/throttle.js");
+},733,[729,726,730,731,723],"node_modules/redux-saga/lib/internal/sagaHelpers/throttle.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -89598,7 +89480,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     return sagaMiddleware;
   }
-},737,[726,733,725],"node_modules/redux-saga/lib/internal/middleware.js");
+},734,[723,730,722],"node_modules/redux-saga/lib/internal/middleware.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -89732,7 +89614,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       return _io.throttle;
     }
   });
-},738,[729],"node_modules/redux-saga/lib/effects.js");
+},735,[726],"node_modules/redux-saga/lib/effects.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -89806,37 +89688,235 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       return _proc.CHANNEL_END;
     }
   });
-},739,[726,729,727],"node_modules/redux-saga/lib/utils.js");
+},736,[723,726,724],"node_modules/redux-saga/lib/utils.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = rootSaga;
+
+  var _redux = _require(_dependencyMap[0], "redux");
+
+  var _currencies = _require(_dependencyMap[1], "./currencies");
+
+  var _currencies2 = _interopRequireDefault(_currencies);
+
+  var _theme = _require(_dependencyMap[2], "./theme");
+
+  var _theme2 = _interopRequireDefault(_theme);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  exports.default = (0, _redux.combineReducers)({
+    currencies: _currencies2.default,
+    theme: _theme2.default
+  });
+},737,[522,738,739],"app/reducers/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _currencies = _require(_dependencyMap[0], "../actions/currencies");
+
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+  var initialState = {
+    baseCurrency: 'USD',
+    quoteCurrency: 'GBP',
+    amount: 100,
+    conversions: {},
+    error: null
+  };
+
+  var setConversions = function setConversions(state, action) {
+    var conversion = {
+      isFetching: true,
+      date: '',
+      rates: {}
+    };
+
+    if (state.conversions[action.currency]) {
+      conversion = state.conversions[action.currency];
+    }
+
+    return _extends({}, state.conversions, _defineProperty({}, action.currency, conversion));
+  };
+
+  exports.default = function () {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    switch (action.type) {
+      case _currencies.CHANGE_CURRENCY_AMOUNT:
+        return _extends({}, state, {
+          amount: action.amount || 0
+        });
+
+      case _currencies.SWAP_CURRENCY:
+        return _extends({}, state, {
+          baseCurrency: state.quoteCurrency,
+          quoteCurrency: state.baseCurrency
+        });
+
+      case _currencies.CHANGE_BASE_CURRENCY:
+        return _extends({}, state, {
+          baseCurrency: action.currency,
+          conversions: setConversions(state, action)
+        });
+
+      case _currencies.CHANGE_QUOTE_CURRENCY:
+        return _extends({}, state, {
+          quoteCurrency: action.currency
+        });
+
+      case _currencies.GET_INITIAL_CONVERSION:
+        return _extends({}, state, {
+          conversions: setConversions(state, {
+            currency: state.baseCurrency
+          })
+        });
+
+      case _currencies.CONVERSION_RESULT:
+        return _extends({}, state, {
+          baseCurrency: action.result.base,
+          conversions: _extends({}, state.conversions, _defineProperty({}, action.result.base, _extends({
+            isFetching: false
+          }, action.result)))
+        });
+
+      case _currencies.CONVERSION_ERROR:
+        return _extends({}, state, {
+          error: action.error
+        });
+
+      default:
+        return state;
+    }
+  };
+},738,[637],"app/reducers/currencies.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _theme = _require(_dependencyMap[0], "../actions/theme");
+
+  var initialState = {
+    primaryColor: "#4F6D7A"
+  };
+
+  var reducer = function reducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    switch (action.type) {
+      case _theme.CHANGE_PRIMARY_COLOR:
+        return _extends({}, state, {
+          primaryColor: action.color
+        });
+
+      default:
+        return state;
+    }
+  };
+
+  exports.default = reducer;
+},739,[713],"app/reducers/theme.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.getLatestRate = undefined;
 
   var _effects = _require(_dependencyMap[0], "redux-saga/effects");
 
   var _currencies = _require(_dependencyMap[1], "../actions/currencies");
 
-  var _marked = regeneratorRuntime.mark(fetchLatestConversionRates),
-      _marked2 = regeneratorRuntime.mark(rootSaga);
+  var getLatestRate = exports.getLatestRate = function getLatestRate(currency) {
+    return fetch("http://api.fixer.io/latest?base=" + currency);
+  };
 
-  function fetchLatestConversionRates(action) {
+  var fetchLatestConversionRates = regeneratorRuntime.mark(function fetchLatestConversionRates(action) {
+    var currency, response, result;
     return regeneratorRuntime.wrap(function fetchLatestConversionRates$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return;
+            _context.prev = 0;
+            currency = action.currency;
 
-          case 2:
+            if (!(currency === undefined)) {
+              _context.next = 6;
+              break;
+            }
+
+            _context.next = 5;
+            return (0, _effects.select)(function (state) {
+              return state.currencies.baseCurrency;
+            });
+
+          case 5:
+            currency = _context.sent;
+
+          case 6:
+            _context.next = 8;
+            return (0, _effects.call)(getLatestRate, currency);
+
+          case 8:
+            response = _context.sent;
+            _context.next = 11;
+            return response.json();
+
+          case 11:
+            result = _context.sent;
+
+            if (!result.error) {
+              _context.next = 17;
+              break;
+            }
+
+            _context.next = 15;
+            return (0, _effects.put)({
+              type: _currencies.CONVERSION_ERROR,
+              error: result.error
+            });
+
+          case 15:
+            _context.next = 19;
+            break;
+
+          case 17:
+            _context.next = 19;
+            return (0, _effects.put)({
+              type: _currencies.CONVERSION_RESULT,
+              result: result
+            });
+
+          case 19:
+            _context.next = 25;
+            break;
+
+          case 21:
+            _context.prev = 21;
+            _context.t0 = _context["catch"](0);
+            _context.next = 25;
+            return (0, _effects.put)({
+              type: _currencies.CONVERSION_ERROR,
+              error: _context.t0.message
+            });
+
+          case 25:
           case "end":
             return _context.stop();
         }
       }
-    }, _marked, this);
-  }
-
-  function rootSaga() {
+    }, fetchLatestConversionRates, this, [[0, 21]]);
+  });
+  var rootSaga = regeneratorRuntime.mark(function rootSaga() {
     return regeneratorRuntime.wrap(function rootSaga$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
@@ -89846,23 +89926,20 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
           case 2:
             _context2.next = 4;
-            return (0, _effects.takeEvery)(_currencies.SWAP_CURRENCY, fetchLatestConversionRates);
+            return (0, _effects.takeEvery)(_currencies.CHANGE_BASE_CURRENCY, fetchLatestConversionRates);
 
           case 4:
             _context2.next = 6;
-            return (0, _effects.takeEvery)(_currencies.CHANGE_BASE_CURRENCY, fetchLatestConversionRates);
+            return (0, _effects.takeEvery)(_currencies.SWAP_CURRENCY, fetchLatestConversionRates);
 
           case 6:
-            _context2.next = 8;
-            return (0, _effects.takeEvery)(_currencies.CHANGE_QUOTE_CURRENCY, fetchLatestConversionRates);
-
-          case 8:
           case "end":
             return _context2.stop();
         }
       }
-    }, _marked2, this);
-  }
-},740,[738,637],"app/config/sagas.js");
+    }, rootSaga, this);
+  });
+  exports.default = rootSaga;
+},740,[735,637],"app/config/sagas.js");
 require(23);
 require(11);//# sourceMappingURL=index.map

@@ -18,7 +18,7 @@ const styles = EStyleSheet.create({
 class Themes extends Component {
   static propTypes = {
     navigation: PropTypes.object,
-    dispatch: PropTypes.func,
+    dispatch: PropTypes.func
   };
 
   handlePressTheme = color => {
