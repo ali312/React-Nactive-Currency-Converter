@@ -60540,7 +60540,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       )
     );
   };
-},494,[112,495,511,539,714,694],"app/index.js");
+},494,[112,495,511,539,714,637],"app/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -63945,7 +63945,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     },
     headerMode: 'none'
   });
-},539,[12,540,605,638,646,712],"app/config/routes.js");
+},539,[12,540,605,656,664,712],"app/config/routes.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -74198,7 +74198,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _Alert.connectAlert)(Home));
-},605,[112,131,12,295,511,606,609,614,625,629,633,694,637],"app/screens/Home.js");
+},605,[112,131,12,295,511,606,609,614,625,629,633,637,655],"app/screens/Home.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80980,6 +80980,1775 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  exports.connectAlert = exports.AlertProvider = undefined;
+
+  var _AlertProvider = _require(_dependencyMap[0], "./AlertProvider");
+
+  var _AlertProvider2 = _interopRequireDefault(_AlertProvider);
+
+  var _connectAlert = _require(_dependencyMap[1], "./connectAlert");
+
+  var _connectAlert2 = _interopRequireDefault(_connectAlert);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  exports.AlertProvider = _AlertProvider2.default;
+  exports.connectAlert = _connectAlert2.default;
+},637,[638,654],"app/components/Alert/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/AlertProvider.js";
+
+  var _reactNative = _require(_dependencyMap[2], "react-native");
+
+  var _propTypes = _require(_dependencyMap[3], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNativeDropdownalert = _require(_dependencyMap[4], "react-native-dropdownalert");
+
+  var _reactNativeDropdownalert2 = _interopRequireDefault(_reactNativeDropdownalert);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    AlertProvider: {
+      displayName: "AlertProvider"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/AlertProvider.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var AlertProvider = _wrapComponent("AlertProvider")((_temp = _class = function (_Component) {
+    _inherits(AlertProvider, _Component);
+
+    function AlertProvider() {
+      _classCallCheck(this, AlertProvider);
+
+      return _possibleConstructorReturn(this, (AlertProvider.__proto__ || Object.getPrototypeOf(AlertProvider)).apply(this, arguments));
+    }
+
+    _createClass(AlertProvider, [{
+      key: "getChildContext",
+      value: function getChildContext() {
+        var _this2 = this;
+
+        return {
+          alert: function alert() {
+            var _dropdown;
+
+            return (_dropdown = _this2.dropdown).alert.apply(_dropdown, arguments);
+          },
+          alertWithType: function alertWithType() {
+            var _dropdown2;
+
+            return (_dropdown2 = _this2.dropdown).alertWithType.apply(_dropdown2, arguments);
+          }
+        };
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this3 = this;
+
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            style: {
+              flex: 1
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 27
+            }
+          },
+          _react3.default.Children.only(this.props.children),
+          _react3.default.createElement(_reactNativeDropdownalert2.default, {
+            ref: function ref(_ref) {
+              _this3.dropdown = _ref;
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 29
+            }
+          })
+        );
+      }
+    }]);
+
+    return AlertProvider;
+  }(_react2.Component), _class.childContextTypes = {
+    alertWithType: _propTypes2.default.func,
+    alert: _propTypes2.default.func
+  }, _class.propTypes = {
+    children: _propTypes2.default.any
+  }, _temp));
+
+  exports.default = AlertProvider;
+},638,[112,131,12,295,639],"app/components/Alert/AlertProvider.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/DropdownAlert.js";
+
+  var _reactNative = _require(_dependencyMap[2], "react-native");
+
+  var _propTypes = _require(_dependencyMap[3], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _constants = _require(_dependencyMap[4], "./constants");
+
+  var _functions = _require(_dependencyMap[5], "./functions");
+
+  var _label = _require(_dependencyMap[6], "./label");
+
+  var _label2 = _interopRequireDefault(_label);
+
+  var _imageview = _require(_dependencyMap[7], "./imageview");
+
+  var _imageview2 = _interopRequireDefault(_imageview);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    DropdownAlert: {
+      displayName: "DropdownAlert"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/DropdownAlert.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var DropdownAlert = _wrapComponent("DropdownAlert")((_temp = _class = function (_Component) {
+    _inherits(DropdownAlert, _Component);
+
+    function DropdownAlert(props) {
+      _classCallCheck(this, DropdownAlert);
+
+      var _this = _possibleConstructorReturn(this, (DropdownAlert.__proto__ || Object.getPrototypeOf(DropdownAlert)).call(this, props));
+
+      _this.createPanResponder = function () {
+        _this._panResponder = _reactNative.PanResponder.create({
+          onStartShouldSetPanResponder: function onStartShouldSetPanResponder(evt, gestureState) {
+            return _this.props.panResponderEnabled;
+          },
+          onMoveShouldSetPanResponder: function onMoveShouldSetPanResponder(evt, gestureState) {
+            return Math.abs(gestureState.dx) < _this.props.sensitivity && Math.abs(gestureState.dy) >= _this.props.sensitivity && _this.props.panResponderEnabled;
+          },
+          onPanResponderMove: function onPanResponderMove(evt, gestureState) {
+            if (gestureState.dy < 0) {
+              _this.setState({
+                topValue: gestureState.dy
+              });
+            }
+          },
+          onPanResponderRelease: function onPanResponderRelease(evt, gestureState) {
+            var delta = _this.state.startDelta / 5;
+
+            if (gestureState.dy < delta) {
+              _this.close('pan');
+            }
+          },
+          onPanResponderTerminate: function onPanResponderTerminate(evt, gestureState) {
+            var delta = _this.state.startDelta / 5;
+
+            if (gestureState.dy < delta) {
+              _this.close('pan');
+            }
+          }
+        });
+      };
+
+      _this.alertWithType = function (type, title, message) {
+        if ((0, _functions.validateType)(type) == false) {
+          return;
+        }
+
+        if (typeof title !== 'string') {
+          title = title.toString();
+          console.warn('DropdownAlert: Title is not a string.');
+        }
+
+        if (typeof message !== 'string') {
+          message = message.toString();
+          console.warn('DropdownAlert: Message is not a string.');
+        }
+
+        if (_this.props.replaceEnabled == false) {
+          _this.setState({
+            type: type,
+            message: message,
+            title: title,
+            isOpen: true,
+            topValue: 0
+          });
+
+          if (_this.state.isOpen == false) {
+            _this.animate(1);
+          }
+
+          if (_this.props.closeInterval > 1) {
+            if (_this._closeTimeoutId != null) {
+              clearTimeout(_this._closeTimeoutId);
+            }
+
+            _this._closeTimeoutId = setTimeout(function () {
+              this.close('automatic');
+            }.bind(_this), _this.props.closeInterval);
+          }
+        } else {
+          var delayInMilliSeconds = 0;
+
+          if (_this.state.isOpen == true) {
+            delayInMilliSeconds = 475;
+
+            _this.close();
+          }
+
+          var self = _this;
+          setTimeout(function () {
+            if (self.state.isOpen == false) {
+              self.setState({
+                type: type,
+                message: message,
+                title: title,
+                isOpen: true,
+                topValue: 0
+              });
+            }
+
+            self.animate(1);
+
+            if (self.props.closeInterval > 1) {
+              this._closeTimeoutId = setTimeout(function () {
+                self.close('automatic');
+              }.bind(self), self.props.closeInterval);
+            }
+          }.bind(_this), delayInMilliSeconds);
+        }
+      };
+
+      _this.close = function (action) {
+        if (action == undefined) {
+          action = 'programmatic';
+        }
+
+        var onClose = _this.props.onClose;
+
+        if (action == 'cancel') {
+          onClose = _this.props.onCancel;
+        }
+
+        if (_this.state.isOpen) {
+          if (_this._closeTimeoutId != null) {
+            clearTimeout(_this._closeTimeoutId);
+          }
+
+          _this.animate(0);
+
+          setTimeout(function () {
+            if (this.state.isOpen) {
+              this.setState({
+                isOpen: false
+              });
+
+              if (this.props.updateStatusBar) {
+                if (_constants.IS_ANDROID) {
+                  _reactNative.StatusBar.setBackgroundColor(this.props.inactiveStatusBarBackgroundColor, true);
+                } else {
+                  _reactNative.StatusBar.setBarStyle(this.props.inactiveStatusBarStyle, true);
+                }
+              }
+
+              if (onClose) {
+                var data = {
+                  type: this.state.type,
+                  title: this.state.title,
+                  message: this.state.message,
+                  action: action
+                };
+                onClose(data);
+              }
+            }
+          }.bind(_this), _this.state.duration);
+        }
+      };
+
+      _this.animate = function (toValue) {
+        _reactNative.Animated.spring(_this.state.animationValue, {
+          toValue: toValue,
+          duration: _this.state.duration,
+          friction: 9,
+          useNativeDriver: _constants.IS_IOS
+        }).start();
+      };
+
+      _this.state = {
+        animationValue: new _reactNative.Animated.Value(0),
+        duration: 450,
+        type: '',
+        message: '',
+        title: '',
+        isOpen: false,
+        startDelta: props.startDelta,
+        endDelta: props.endDelta,
+        topValue: 0
+      };
+      return _this;
+    }
+
+    _createClass(DropdownAlert, [{
+      key: "componentWillMount",
+      value: function componentWillMount() {
+        this.createPanResponder();
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        if (this._closeTimeoutId != null) {
+          clearTimeout(this._closeTimeoutId);
+        }
+      }
+    }, {
+      key: "closeDirectly",
+      value: function closeDirectly() {
+        if (this.state.isOpen) {
+          if (this._closeTimeoutId != null) {
+            clearTimeout(this._closeTimeoutId);
+          }
+
+          this.setState({
+            isOpen: false
+          });
+
+          if (this.props.updateStatusBar) {
+            if (_constants.IS_ANDROID) {
+              _reactNative.StatusBar.setBackgroundColor(this.props.inactiveStatusBarBackgroundColor, true);
+            } else {
+              _reactNative.StatusBar.setBarStyle(this.props.inactiveStatusBarStyle, true);
+            }
+          }
+        }
+      }
+    }, {
+      key: "onLayoutEvent",
+      value: function onLayoutEvent(event) {
+        var _event$nativeEvent$la = event.nativeEvent.layout,
+            x = _event$nativeEvent$la.x,
+            y = _event$nativeEvent$la.y,
+            width = _event$nativeEvent$la.width,
+            height = _event$nativeEvent$la.height;
+        var actualStartDelta = this.state.startDelta;
+        var actualEndDelta = this.state.endDelta;
+        var _props = this.props,
+            startDelta = _props.startDelta,
+            endDelta = _props.endDelta;
+
+        if (startDelta < 0) {
+          var delta = 0 - height;
+
+          if (delta != startDelta) {
+            actualStartDelta = delta;
+          }
+        } else if (startDelta > _constants.WINDOW.height) {
+          actualStartDelta = _constants.WINDOW.height + height;
+        }
+
+        if (endDelta < 0) {
+          actualEndDelta = 0;
+        } else if (endDelta > _constants.WINDOW.height) {
+          actualEndDelta = _constants.WINDOW.height - height;
+        }
+
+        var heightDelta = _constants.WINDOW.height - endDelta - height;
+
+        if (heightDelta < 0) {
+          actualEndDelta = endDelta + heightDelta;
+        }
+
+        if (actualStartDelta != this.state.startDelta || actualEndDelta != this.state.endDelta) {
+          this.setState({
+            startDelta: actualStartDelta,
+            endDelta: actualEndDelta
+          });
+        }
+      }
+    }, {
+      key: "getStyleForType",
+      value: function getStyleForType(type) {
+        var defaultContainer = this.props.defaultContainer;
+
+        switch (type) {
+          case 'info':
+            return [_reactNative.StyleSheet.flatten(defaultContainer), {
+              backgroundColor: this.props.infoColor
+            }];
+
+          case 'warn':
+            return [_reactNative.StyleSheet.flatten(defaultContainer), {
+              backgroundColor: this.props.warnColor
+            }];
+
+          case 'error':
+            return [_reactNative.StyleSheet.flatten(defaultContainer), {
+              backgroundColor: this.props.errorColor
+            }];
+
+          case 'success':
+            return [_reactNative.StyleSheet.flatten(defaultContainer), {
+              backgroundColor: this.props.successColor
+            }];
+
+          default:
+            return [_reactNative.StyleSheet.flatten(defaultContainer), _reactNative.StyleSheet.flatten(this.props.containerStyle)];
+        }
+      }
+    }, {
+      key: "getSourceForType",
+      value: function getSourceForType(type) {
+        switch (type) {
+          case 'info':
+            return _require(_dependencyMap[8], './assets/info.png');
+
+          case 'warn':
+            return _require(_dependencyMap[9], './assets/warn.png');
+
+          case 'error':
+            return _require(_dependencyMap[10], './assets/error.png');
+
+          case 'success':
+            return _require(_dependencyMap[11], './assets/success.png');
+
+          default:
+            return this.props.imageSrc;
+        }
+      }
+    }, {
+      key: "getBackgroundColorForType",
+      value: function getBackgroundColorForType(type) {
+        switch (type) {
+          case 'info':
+            return this.props.infoColor;
+
+          case 'warn':
+            return this.props.warnColor;
+
+          case 'error':
+            return this.props.errorColor;
+
+          case 'success':
+            return this.props.successColor;
+
+          default:
+            return this.props.containerStyle.backgroundColor;
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this2 = this;
+
+        var _state = this.state,
+            isOpen = _state.isOpen,
+            type = _state.type;
+
+        if (isOpen) {
+          var style = this.getStyleForType(type);
+          var source = this.getSourceForType(type);
+          var backgroundColor = this.getBackgroundColorForType(type);
+          var _props2 = this.props,
+              activeStatusBarBackgroundColor = _props2.activeStatusBarBackgroundColor,
+              translucent = _props2.translucent,
+              updateStatusBar = _props2.updateStatusBar,
+              activeStatusBarStyle = _props2.activeStatusBarStyle,
+              cancelBtnImageSrc = _props2.cancelBtnImageSrc,
+              showCancel = _props2.showCancel;
+
+          if (_constants.IS_ANDROID) {
+            if (translucent) {
+              style = [style, {
+                paddingTop: _reactNative.StatusBar.currentHeight
+              }];
+            }
+
+            if (type !== 'custom') {
+              activeStatusBarBackgroundColor = backgroundColor;
+            }
+          }
+
+          if (updateStatusBar) {
+            if (_constants.IS_ANDROID) {
+              _reactNative.StatusBar.setBackgroundColor(activeStatusBarBackgroundColor, true);
+
+              _reactNative.StatusBar.setTranslucent(translucent);
+            } else if (_constants.IS_IOS) {
+              _reactNative.StatusBar.setBarStyle(activeStatusBarStyle, true);
+            }
+          }
+
+          var wrapperStyle = {
+            transform: [{
+              translateY: this.state.animationValue.interpolate({
+                inputRange: [0, 1],
+                outputRange: [this.state.startDelta, this.state.endDelta]
+              })
+            }],
+            position: 'absolute',
+            top: this.state.topValue,
+            left: 0,
+            right: 0,
+            elevation: this.props.elevation
+          };
+          if (this.props.zIndex != null) wrapperStyle['zIndex'] = this.props.zIndex;
+          return _react3.default.createElement(
+            _reactNative.Animated.View,
+            _extends({
+              ref: function ref(_ref) {
+                return _this2.mainView = _ref;
+              }
+            }, this._panResponder.panHandlers, {
+              style: wrapperStyle,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 419
+              }
+            }),
+            _react3.default.createElement(
+              _reactNative.TouchableOpacity,
+              {
+                activeOpacity: !this.props.tapToCloseEnabled || showCancel ? 1 : 0.95,
+                onPress: showCancel ? null : function () {
+                  return _this2.close('tap');
+                },
+                disabled: !this.props.tapToCloseEnabled,
+                onLayout: function onLayout(event) {
+                  return _this2.onLayoutEvent(event);
+                },
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 424
+                }
+              },
+              _react3.default.createElement(
+                _reactNative.View,
+                {
+                  style: style,
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 430
+                  }
+                },
+                _react3.default.createElement(_imageview2.default, {
+                  style: _reactNative.StyleSheet.flatten(this.props.imageStyle),
+                  source: source,
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 431
+                  }
+                }),
+                _react3.default.createElement(
+                  _reactNative.View,
+                  {
+                    style: _reactNative.StyleSheet.flatten(this.props.defaultTextContainer),
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 432
+                    }
+                  },
+                  _react3.default.createElement(_label2.default, {
+                    style: _reactNative.StyleSheet.flatten(this.props.titleStyle),
+                    numberOfLines: this.props.titleNumOfLines,
+                    text: this.state.title,
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 433
+                    }
+                  }),
+                  _react3.default.createElement(_label2.default, {
+                    style: _reactNative.StyleSheet.flatten(this.props.messageStyle),
+                    numberOfLines: this.props.messageNumOfLines,
+                    text: this.state.message,
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 434
+                    }
+                  })
+                ),
+                showCancel && _react3.default.createElement(
+                  _reactNative.TouchableOpacity,
+                  {
+                    style: {
+                      alignSelf: this.props.cancelBtnImageStyle.alignSelf,
+                      width: this.props.cancelBtnImageStyle.width,
+                      height: this.props.cancelBtnImageStyle.height
+                    },
+                    onPress: function onPress() {
+                      return _this2.close('cancel');
+                    },
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 437
+                    }
+                  },
+                  _react3.default.createElement(_imageview2.default, {
+                    style: this.props.cancelBtnImageStyle,
+                    source: this.props.cancelBtnImageSrc,
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 445
+                    }
+                  })
+                )
+              )
+            )
+          );
+        }
+
+        return null;
+      }
+    }]);
+
+    return DropdownAlert;
+  }(_react2.Component), _class.propTypes = {
+    imageSrc: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    cancelBtnImageSrc: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    infoColor: _propTypes2.default.string,
+    warnColor: _propTypes2.default.string,
+    errorColor: _propTypes2.default.string,
+    successColor: _propTypes2.default.string,
+    closeInterval: _propTypes2.default.number,
+    startDelta: _propTypes2.default.number,
+    endDelta: _propTypes2.default.number,
+    containerStyle: _reactNative.ViewPropTypes.style,
+    titleStyle: _reactNative.Text.propTypes.style,
+    messageStyle: _reactNative.Text.propTypes.style,
+    imageStyle: _reactNative.Image.propTypes.style,
+    cancelBtnImageStyle: _reactNative.Image.propTypes.style,
+    titleNumOfLines: _propTypes2.default.number,
+    messageNumOfLines: _propTypes2.default.number,
+    onClose: _propTypes2.default.func,
+    onCancel: _propTypes2.default.func,
+    showCancel: _propTypes2.default.bool,
+    tapToCloseEnabled: _propTypes2.default.bool,
+    panResponderEnabled: _propTypes2.default.bool,
+    replaceEnabled: _propTypes2.default.bool,
+    translucent: _propTypes2.default.bool,
+    activeStatusBarStyle: _propTypes2.default.string,
+    activeStatusBarBackgroundColor: _propTypes2.default.string,
+    inactiveStatusBarStyle: _propTypes2.default.string,
+    inactiveStatusBarBackgroundColor: _propTypes2.default.string,
+    updateStatusBar: _propTypes2.default.bool,
+    elevation: _propTypes2.default.number,
+    zIndex: _propTypes2.default.number,
+    sensitivity: _propTypes2.default.number,
+    defaultContainer: _reactNative.ViewPropTypes.style,
+    defaultTextContainer: _reactNative.ViewPropTypes.style
+  }, _class.defaultProps = {
+    onClose: null,
+    onCancel: null,
+    closeInterval: 4000,
+    startDelta: -100,
+    endDelta: 0,
+    titleNumOfLines: 1,
+    messageNumOfLines: 3,
+    imageSrc: null,
+    cancelBtnImageSrc: _require(_dependencyMap[12], './assets/cancel.png'),
+    infoColor: '#2B73B6',
+    warnColor: '#cd853f',
+    errorColor: '#cc3232',
+    successColor: '#32A54A',
+    showCancel: false,
+    tapToCloseEnabled: true,
+    panResponderEnabled: true,
+    replaceEnabled: true,
+    containerStyle: {
+      padding: 16,
+      flexDirection: 'row'
+    },
+    titleStyle: {
+      fontSize: 16,
+      textAlign: 'left',
+      fontWeight: 'bold',
+      color: 'white',
+      backgroundColor: 'transparent'
+    },
+    messageStyle: {
+      fontSize: 14,
+      textAlign: 'left',
+      fontWeight: 'normal',
+      color: 'white',
+      backgroundColor: 'transparent'
+    },
+    imageStyle: {
+      padding: 8,
+      width: _constants.DEFAULT_IMAGE_DIMENSIONS,
+      height: _constants.DEFAULT_IMAGE_DIMENSIONS,
+      alignSelf: 'center'
+    },
+    cancelBtnImageStyle: {
+      padding: 8,
+      width: _constants.DEFAULT_IMAGE_DIMENSIONS,
+      height: _constants.DEFAULT_IMAGE_DIMENSIONS,
+      alignSelf: 'center'
+    },
+    defaultContainer: {
+      padding: 8,
+      paddingTop: _constants.IS_ANDROID ? 0 : 20,
+      flexDirection: 'row'
+    },
+    defaultTextContainer: {
+      flex: 1,
+      padding: 8
+    },
+    translucent: false,
+    activeStatusBarStyle: 'light-content',
+    activeStatusBarBackgroundColor: _constants.StatusBarDefaultBackgroundColor,
+    inactiveStatusBarStyle: _constants.StatusBarDefaultBarStyle,
+    inactiveStatusBarBackgroundColor: _constants.StatusBarDefaultBackgroundColor,
+    updateStatusBar: true,
+    elevation: 1,
+    zIndex: null,
+    sensitivity: 20
+  }, _temp));
+
+  exports.default = DropdownAlert;
+},639,[112,131,12,640,645,646,647,648,649,650,651,652,653],"node_modules/react-native-dropdownalert/DropdownAlert.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  if (process.env.NODE_ENV !== 'production') {
+    var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && (typeof Symbol === "function" ? Symbol.for : "@@for") && (typeof Symbol === "function" ? Symbol.for : "@@for")('react.element') || 0xeac7;
+
+    var isValidElement = function isValidElement(object) {
+      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    };
+
+    var throwOnDirectAccess = true;
+    module.exports = _require(_dependencyMap[0], './factoryWithTypeCheckers')(isValidElement, throwOnDirectAccess);
+  } else {
+    module.exports = _require(_dependencyMap[1], './factoryWithThrowingShims')();
+  }
+},640,[641,644],"node_modules/react-native-dropdownalert/node_modules/prop-types/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var emptyFunction = _require(_dependencyMap[0], 'fbjs/lib/emptyFunction');
+
+  var invariant = _require(_dependencyMap[1], 'fbjs/lib/invariant');
+
+  var warning = _require(_dependencyMap[2], 'fbjs/lib/warning');
+
+  var ReactPropTypesSecret = _require(_dependencyMap[3], './lib/ReactPropTypesSecret');
+
+  var checkPropTypes = _require(_dependencyMap[4], './checkPropTypes');
+
+  module.exports = function (isValidElement, throwOnDirectAccess) {
+    var ITERATOR_SYMBOL = typeof Symbol === 'function' && (typeof Symbol === "function" ? Symbol.iterator : "@@iterator");
+    var FAUX_ITERATOR_SYMBOL = '@@iterator';
+
+    function getIteratorFn(maybeIterable) {
+      var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+
+      if (typeof iteratorFn === 'function') {
+        return iteratorFn;
+      }
+    }
+
+    var ANONYMOUS = '<<anonymous>>';
+    var ReactPropTypes = {
+      array: createPrimitiveTypeChecker('array'),
+      bool: createPrimitiveTypeChecker('boolean'),
+      func: createPrimitiveTypeChecker('function'),
+      number: createPrimitiveTypeChecker('number'),
+      object: createPrimitiveTypeChecker('object'),
+      string: createPrimitiveTypeChecker('string'),
+      symbol: createPrimitiveTypeChecker('symbol'),
+      any: createAnyTypeChecker(),
+      arrayOf: createArrayOfTypeChecker,
+      element: createElementTypeChecker(),
+      instanceOf: createInstanceTypeChecker,
+      node: createNodeChecker(),
+      objectOf: createObjectOfTypeChecker,
+      oneOf: createEnumTypeChecker,
+      oneOfType: createUnionTypeChecker,
+      shape: createShapeTypeChecker
+    };
+
+    function is(x, y) {
+      if (x === y) {
+        return x !== 0 || 1 / x === 1 / y;
+      } else {
+        return x !== x && y !== y;
+      }
+    }
+
+    function PropTypeError(message) {
+      this.message = message;
+      this.stack = '';
+    }
+
+    PropTypeError.prototype = Error.prototype;
+
+    function createChainableTypeChecker(validate) {
+      if (process.env.NODE_ENV !== 'production') {
+        var manualPropTypeCallCache = {};
+        var manualPropTypeWarningCount = 0;
+      }
+
+      function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+        componentName = componentName || ANONYMOUS;
+        propFullName = propFullName || propName;
+
+        if (secret !== ReactPropTypesSecret) {
+          if (throwOnDirectAccess) {
+            invariant(false, 'Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+          } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+            var cacheKey = componentName + ':' + propName;
+
+            if (!manualPropTypeCallCache[cacheKey] && manualPropTypeWarningCount < 3) {
+              warning(false, 'You are manually calling a React.PropTypes validation ' + 'function for the `%s` prop on `%s`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.', propFullName, componentName);
+              manualPropTypeCallCache[cacheKey] = true;
+              manualPropTypeWarningCount++;
+            }
+          }
+        }
+
+        if (props[propName] == null) {
+          if (isRequired) {
+            if (props[propName] === null) {
+              return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+            }
+
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+          }
+
+          return null;
+        } else {
+          return validate(props, propName, componentName, location, propFullName);
+        }
+      }
+
+      var chainedCheckType = checkType.bind(null, false);
+      chainedCheckType.isRequired = checkType.bind(null, true);
+      return chainedCheckType;
+    }
+
+    function createPrimitiveTypeChecker(expectedType) {
+      function validate(props, propName, componentName, location, propFullName, secret) {
+        var propValue = props[propName];
+        var propType = getPropType(propValue);
+
+        if (propType !== expectedType) {
+          var preciseType = getPreciseType(propValue);
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+        }
+
+        return null;
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createAnyTypeChecker() {
+      return createChainableTypeChecker(emptyFunction.thatReturnsNull);
+    }
+
+    function createArrayOfTypeChecker(typeChecker) {
+      function validate(props, propName, componentName, location, propFullName) {
+        if (typeof typeChecker !== 'function') {
+          return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+        }
+
+        var propValue = props[propName];
+
+        if (!Array.isArray(propValue)) {
+          var propType = getPropType(propValue);
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+        }
+
+        for (var i = 0; i < propValue.length; i++) {
+          var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+
+        return null;
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createElementTypeChecker() {
+      function validate(props, propName, componentName, location, propFullName) {
+        var propValue = props[propName];
+
+        if (!isValidElement(propValue)) {
+          var propType = getPropType(propValue);
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+        }
+
+        return null;
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createInstanceTypeChecker(expectedClass) {
+      function validate(props, propName, componentName, location, propFullName) {
+        if (!(props[propName] instanceof expectedClass)) {
+          var expectedClassName = expectedClass.name || ANONYMOUS;
+          var actualClassName = getClassName(props[propName]);
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+        }
+
+        return null;
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createEnumTypeChecker(expectedValues) {
+      if (!Array.isArray(expectedValues)) {
+        process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+        return emptyFunction.thatReturnsNull;
+      }
+
+      function validate(props, propName, componentName, location, propFullName) {
+        var propValue = props[propName];
+
+        for (var i = 0; i < expectedValues.length; i++) {
+          if (is(propValue, expectedValues[i])) {
+            return null;
+          }
+        }
+
+        var valuesString = JSON.stringify(expectedValues);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createObjectOfTypeChecker(typeChecker) {
+      function validate(props, propName, componentName, location, propFullName) {
+        if (typeof typeChecker !== 'function') {
+          return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+        }
+
+        var propValue = props[propName];
+        var propType = getPropType(propValue);
+
+        if (propType !== 'object') {
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+        }
+
+        for (var key in propValue) {
+          if (propValue.hasOwnProperty(key)) {
+            var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+
+            if (error instanceof Error) {
+              return error;
+            }
+          }
+        }
+
+        return null;
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+      if (!Array.isArray(arrayOfTypeCheckers)) {
+        process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+        return emptyFunction.thatReturnsNull;
+      }
+
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+
+        if (typeof checker !== 'function') {
+          warning(false, 'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' + 'received %s at index %s.', getPostfixForTypeWarning(checker), i);
+          return emptyFunction.thatReturnsNull;
+        }
+      }
+
+      function validate(props, propName, componentName, location, propFullName) {
+        for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+          var checker = arrayOfTypeCheckers[i];
+
+          if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+            return null;
+          }
+        }
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createNodeChecker() {
+      function validate(props, propName, componentName, location, propFullName) {
+        if (!isNode(props[propName])) {
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+        }
+
+        return null;
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function createShapeTypeChecker(shapeTypes) {
+      function validate(props, propName, componentName, location, propFullName) {
+        var propValue = props[propName];
+        var propType = getPropType(propValue);
+
+        if (propType !== 'object') {
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+        }
+
+        for (var key in shapeTypes) {
+          var checker = shapeTypes[key];
+
+          if (!checker) {
+            continue;
+          }
+
+          var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+
+          if (error) {
+            return error;
+          }
+        }
+
+        return null;
+      }
+
+      return createChainableTypeChecker(validate);
+    }
+
+    function isNode(propValue) {
+      switch (typeof propValue) {
+        case 'number':
+        case 'string':
+        case 'undefined':
+          return true;
+
+        case 'boolean':
+          return !propValue;
+
+        case 'object':
+          if (Array.isArray(propValue)) {
+            return propValue.every(isNode);
+          }
+
+          if (propValue === null || isValidElement(propValue)) {
+            return true;
+          }
+
+          var iteratorFn = getIteratorFn(propValue);
+
+          if (iteratorFn) {
+            var iterator = iteratorFn.call(propValue);
+            var step;
+
+            if (iteratorFn !== propValue.entries) {
+              while (!(step = iterator.next()).done) {
+                if (!isNode(step.value)) {
+                  return false;
+                }
+              }
+            } else {
+              while (!(step = iterator.next()).done) {
+                var entry = step.value;
+
+                if (entry) {
+                  if (!isNode(entry[1])) {
+                    return false;
+                  }
+                }
+              }
+            }
+          } else {
+            return false;
+          }
+
+          return true;
+
+        default:
+          return false;
+      }
+    }
+
+    function isSymbol(propType, propValue) {
+      if (propType === 'symbol') {
+        return true;
+      }
+
+      if (propValue['@@toStringTag'] === 'Symbol') {
+        return true;
+      }
+
+      if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+        return true;
+      }
+
+      return false;
+    }
+
+    function getPropType(propValue) {
+      var propType = typeof propValue;
+
+      if (Array.isArray(propValue)) {
+        return 'array';
+      }
+
+      if (propValue instanceof RegExp) {
+        return 'object';
+      }
+
+      if (isSymbol(propType, propValue)) {
+        return 'symbol';
+      }
+
+      return propType;
+    }
+
+    function getPreciseType(propValue) {
+      if (typeof propValue === 'undefined' || propValue === null) {
+        return '' + propValue;
+      }
+
+      var propType = getPropType(propValue);
+
+      if (propType === 'object') {
+        if (propValue instanceof Date) {
+          return 'date';
+        } else if (propValue instanceof RegExp) {
+          return 'regexp';
+        }
+      }
+
+      return propType;
+    }
+
+    function getPostfixForTypeWarning(value) {
+      var type = getPreciseType(value);
+
+      switch (type) {
+        case 'array':
+        case 'object':
+          return 'an ' + type;
+
+        case 'boolean':
+        case 'date':
+        case 'regexp':
+          return 'a ' + type;
+
+        default:
+          return type;
+      }
+    }
+
+    function getClassName(propValue) {
+      if (!propValue.constructor || !propValue.constructor.name) {
+        return ANONYMOUS;
+      }
+
+      return propValue.constructor.name;
+    }
+
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+  };
+},641,[57,13,56,642,643],"node_modules/react-native-dropdownalert/node_modules/prop-types/factoryWithTypeCheckers.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+  module.exports = ReactPropTypesSecret;
+},642,[],"node_modules/react-native-dropdownalert/node_modules/prop-types/lib/ReactPropTypesSecret.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  if (process.env.NODE_ENV !== 'production') {
+    var invariant = _require(_dependencyMap[0], 'fbjs/lib/invariant');
+
+    var warning = _require(_dependencyMap[1], 'fbjs/lib/warning');
+
+    var ReactPropTypesSecret = _require(_dependencyMap[2], './lib/ReactPropTypesSecret');
+
+    var loggedTypeFailures = {};
+  }
+
+  function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    if (process.env.NODE_ENV !== 'production') {
+      for (var typeSpecName in typeSpecs) {
+        if (typeSpecs.hasOwnProperty(typeSpecName)) {
+          var error;
+
+          try {
+            invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+          } catch (ex) {
+            error = ex;
+          }
+
+          warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
+
+          if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : '';
+            warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
+          }
+        }
+      }
+    }
+  }
+
+  module.exports = checkPropTypes;
+},643,[13,56,642],"node_modules/react-native-dropdownalert/node_modules/prop-types/checkPropTypes.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var emptyFunction = _require(_dependencyMap[0], 'fbjs/lib/emptyFunction');
+
+  var invariant = _require(_dependencyMap[1], 'fbjs/lib/invariant');
+
+  var ReactPropTypesSecret = _require(_dependencyMap[2], './lib/ReactPropTypesSecret');
+
+  module.exports = function () {
+    function shim(props, propName, componentName, location, propFullName, secret) {
+      if (secret === ReactPropTypesSecret) {
+        return;
+      }
+
+      invariant(false, 'Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+    }
+
+    ;
+    shim.isRequired = shim;
+
+    function getShim() {
+      return shim;
+    }
+
+    ;
+    var ReactPropTypes = {
+      array: shim,
+      bool: shim,
+      func: shim,
+      number: shim,
+      object: shim,
+      string: shim,
+      symbol: shim,
+      any: shim,
+      arrayOf: getShim,
+      element: shim,
+      instanceOf: getShim,
+      node: shim,
+      objectOf: getShim,
+      oneOf: getShim,
+      oneOfType: getShim,
+      shape: getShim
+    };
+    ReactPropTypes.checkPropTypes = emptyFunction;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+  };
+},644,[57,13,642],"node_modules/react-native-dropdownalert/node_modules/prop-types/factoryWithThrowingShims.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  var _reactNative = _require(_dependencyMap[0], "react-native");
+
+  var StatusBarDefaultBarStyle = _reactNative.StatusBar._defaultProps.barStyle.value;
+  var StatusBarDefaultBackgroundColor = _reactNative.StatusBar._defaultProps.backgroundColor.value;
+  var DEFAULT_IMAGE_DIMENSIONS = 36;
+
+  var WINDOW = _reactNative.Dimensions.get('window');
+
+  var HEIGHT = WINDOW.height;
+  var WIDTH = WINDOW.width;
+  var IS_IOS = _reactNative.Platform.OS == 'ios';
+  var IS_ANDROID = _reactNative.Platform.OS == 'android';
+  module.exports = {
+    StatusBarDefaultBarStyle: StatusBarDefaultBarStyle,
+    StatusBarDefaultBackgroundColor: StatusBarDefaultBackgroundColor,
+    DEFAULT_IMAGE_DIMENSIONS: DEFAULT_IMAGE_DIMENSIONS,
+    WINDOW: WINDOW,
+    HEIGHT: HEIGHT,
+    WIDTH: WIDTH,
+    IS_IOS: IS_IOS,
+    IS_ANDROID: IS_ANDROID
+  };
+},645,[12],"node_modules/react-native-dropdownalert/constants.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports.validateType = function (type) {
+    if (type.length === 0 || type === null) {
+      console.warn('Missing DropdownAlert type. Available types: info, warn, error or custom');
+      return false;
+    }
+
+    if (type != 'info' && type != 'warn' && type != 'error' && type != 'custom' && type != 'success') {
+      console.warn('Invalid DropdownAlert type. Available types: info, warn, error, success, or custom');
+      return false;
+    }
+
+    return true;
+  };
+},646,[],"node_modules/react-native-dropdownalert/functions.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/label.js";
+
+  var _propTypes = _require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = _require(_dependencyMap[3], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    Label: {
+      displayName: "Label"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/label.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var Label = _wrapComponent("Label")((_temp = _class = function (_Component) {
+    _inherits(Label, _Component);
+
+    function Label() {
+      _classCallCheck(this, Label);
+
+      return _possibleConstructorReturn(this, (Label.__proto__ || Object.getPrototypeOf(Label)).apply(this, arguments));
+    }
+
+    _createClass(Label, [{
+      key: "render",
+      value: function render() {
+        var _props = this.props,
+            text = _props.text,
+            style = _props.style,
+            numberOfLines = _props.numberOfLines,
+            textProps = _props.textProps;
+
+        if (text !== null && text.length > 0) {
+          return _react3.default.createElement(
+            _reactNative.Text,
+            _extends({}, textProps, {
+              style: style,
+              numberOfLines: numberOfLines,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 27
+              }
+            }),
+            text
+          );
+        }
+
+        return null;
+      }
+    }]);
+
+    return Label;
+  }(_react2.Component), _class.propTypes = {
+    text: _propTypes2.default.string,
+    style: _reactNative.Text.propTypes.style,
+    numberOfLines: _propTypes2.default.number,
+    textProps: _propTypes2.default.object
+  }, _class.defaultProps = {
+    numberOfLines: 1,
+    style: {
+      fontSize: 16,
+      textAlign: 'left',
+      fontWeight: 'normal',
+      color: 'white',
+      backgroundColor: 'transparent'
+    },
+    textProps: {}
+  }, _temp));
+
+  exports.default = Label;
+},647,[112,131,640,12],"node_modules/react-native-dropdownalert/label.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/imageview.js";
+
+  var _propTypes = _require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = _require(_dependencyMap[3], "react-native");
+
+  var _constants = _require(_dependencyMap[4], "./constants");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    ImageView: {
+      displayName: "ImageView"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/imageview.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var ImageView = _wrapComponent("ImageView")((_temp = _class = function (_Component) {
+    _inherits(ImageView, _Component);
+
+    function ImageView() {
+      _classCallCheck(this, ImageView);
+
+      return _possibleConstructorReturn(this, (ImageView.__proto__ || Object.getPrototypeOf(ImageView)).apply(this, arguments));
+    }
+
+    _createClass(ImageView, [{
+      key: "render",
+      value: function render() {
+        var _props = this.props,
+            source = _props.source,
+            style = _props.style,
+            imageProps = _props.imageProps;
+
+        if (source != null) {
+          var isRemote = typeof source === 'string';
+
+          if (!style['width']) {
+            style['width'] = _constants.DEFAULT_IMAGE_DIMENSIONS;
+          }
+
+          if (!style['height']) {
+            style['height'] = _constants.DEFAULT_IMAGE_DIMENSIONS;
+          }
+
+          return _react3.default.createElement(_reactNative.Image, _extends({
+            style: style,
+            source: isRemote ? {
+              uri: source
+            } : source
+          }, imageProps, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 32
+            }
+          }));
+        }
+
+        return null;
+      }
+    }]);
+
+    return ImageView;
+  }(_react2.Component), _class.propTypes = {
+    style: _reactNative.Image.propTypes.style,
+    source: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    imageProps: _propTypes2.default.object
+  }, _class.defaultProps = {
+    style: {
+      padding: 8,
+      width: _constants.DEFAULT_IMAGE_DIMENSIONS,
+      height: _constants.DEFAULT_IMAGE_DIMENSIONS,
+      alignSelf: 'center'
+    },
+    source: null,
+    imageProps: {}
+  }, _temp));
+
+  exports.default = ImageView;
+},648,[112,131,640,12,645],"node_modules/react-native-dropdownalert/imageview.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
+    "width": 36,
+    "height": 36,
+    "scales": [1, 2, 3],
+    "hash": "b86a115937dbb5b00c4698e88f32885f",
+    "name": "info",
+    "type": "png"
+  });
+},649,[329],"node_modules/react-native-dropdownalert/assets/info.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
+    "width": 36,
+    "height": 36,
+    "scales": [1, 2, 3],
+    "hash": "b3b160543422bf83c0dffb247f5a9a3c",
+    "name": "warn",
+    "type": "png"
+  });
+},650,[329],"node_modules/react-native-dropdownalert/assets/warn.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
+    "width": 36,
+    "height": 36,
+    "scales": [1, 2, 3],
+    "hash": "def248a046dc4b7a75bcd60e1ce444d7",
+    "name": "error",
+    "type": "png"
+  });
+},651,[329],"node_modules/react-native-dropdownalert/assets/error.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
+    "width": 36,
+    "height": 36,
+    "scales": [1, 2, 3],
+    "hash": "fa2fc3283239617c85705d8d3fb30148",
+    "name": "success",
+    "type": "png"
+  });
+},652,[329],"node_modules/react-native-dropdownalert/assets/success.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
+    "width": 36,
+    "height": 36,
+    "scales": [1, 2, 3],
+    "hash": "73cf01e3b92f81ad47ce862a7b96003c",
+    "name": "cancel",
+    "type": "png"
+  });
+},653,[329],"node_modules/react-native-dropdownalert/assets/cancel.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/connectAlert.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _hoistNonReactStatics = _require(_dependencyMap[2], "hoist-non-react-statics");
+
+  var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
+
+  var _propTypes = _require(_dependencyMap[3], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    ConnectedAlert: {
+      displayName: "ConnectedAlert",
+      isInFunction: true
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/connectAlert.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var connectAlert = function connectAlert(WrappedComponent) {
+    var ConnectedAlert = _wrapComponent("ConnectedAlert")(function (_Component) {
+      _inherits(ConnectedAlert, _Component);
+
+      function ConnectedAlert() {
+        _classCallCheck(this, ConnectedAlert);
+
+        return _possibleConstructorReturn(this, (ConnectedAlert.__proto__ || Object.getPrototypeOf(ConnectedAlert)).apply(this, arguments));
+      }
+
+      _createClass(ConnectedAlert, [{
+        key: "render",
+        value: function render() {
+          return _react3.default.createElement(WrappedComponent, _extends({}, this.props, {
+            alertWithType: this.context.alertWithType,
+            alert: this.context.alert,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 11
+            }
+          }));
+        }
+      }]);
+
+      return ConnectedAlert;
+    }(_react2.Component));
+
+    ConnectedAlert.contextTypes = {
+      alertWithType: _propTypes2.default.func,
+      alert: _propTypes2.default.func
+    };
+    return (0, _hoistNonReactStatics2.default)(ConnectedAlert, WrappedComponent);
+  };
+
+  exports.default = connectAlert;
+},654,[112,131,564,295],"app/components/Alert/connectAlert.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
   var CHANGE_CURRENCY_AMOUNT = exports.CHANGE_CURRENCY_AMOUNT = 'CHANGE_CURRENCY_AMOUNT';
   var SWAP_CURRENCY = exports.SWAP_CURRENCY = 'SWAP_CURRENCY';
   var CHANGE_BASE_CURRENCY = exports.CHANGE_BASE_CURRENCY = 'CHANGE_BASE_CURRENCY';
@@ -81020,7 +82789,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       currency: currency
     };
   };
-},637,[],"app/actions/currencies.js");
+},655,[],"app/actions/currencies.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81188,7 +82957,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   exports.default = (0, _reactRedux.connect)(mapStateToProps)(CurrencyList);
-},638,[112,131,12,295,511,639,645,637],"app/screens/CurrencyList.js");
+},656,[112,131,12,295,511,657,663,655],"app/screens/CurrencyList.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81217,7 +82986,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   exports.Icon = _Icon2.default;
   exports.Separator = _Separator2.default;
   exports.styles = _styles2.default;
-},639,[640,641,642,644],"app/components/List/index.js");
+},657,[658,659,660,662],"app/components/List/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81268,7 +83037,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   });
 
   exports.default = styles;
-},640,[12,495],"app/components/List/styles.js");
+},658,[12,495],"app/components/List/styles.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81366,7 +83135,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     iconBackground: _propTypes2.default.string
   };
   exports.default = ListItem;
-},641,[112,295,12,640,642],"app/components/List/ListItem.js");
+},659,[112,295,12,658,660],"app/components/List/ListItem.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81432,7 +83201,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     iconBackground: _propTypes2.default.string
   };
   exports.default = Icon;
-},642,[112,295,12,640,643],"app/components/List/Icon.js");
+},660,[112,295,12,658,661],"app/components/List/Icon.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -81444,7 +83213,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     "name": "check",
     "type": "png"
   });
-},643,[329],"app/components/List/images/check.png");
+},661,[329],"app/components/List/images/check.png");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81474,13 +83243,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   exports.default = Separator;
-},644,[112,12,640],"app/components/List/Separator.js");
+},662,[112,12,658],"app/components/List/Separator.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = ["AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK", "SGD", "THB", "TRY", "USD", "ZAR"];
-},645,[],"app/data/currencies.js");
+},663,[],"app/data/currencies.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81644,7 +83413,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }, _temp2));
 
   exports.default = (0, _Alert.connectAlert)(Options);
-},646,[112,131,12,295,647,639,694],"app/screens/Options.js");
+},664,[112,131,12,295,665,657,637],"app/screens/Options.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81668,7 +83437,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},647,[648,693],"node_modules/react-native-vector-icons/Ionicons.js");
+},665,[666,711],"node_modules/react-native-vector-icons/Ionicons.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81924,7 +83693,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     Icon.hasIcon = hasIcon;
     return Icon;
   }
-},648,[112,131,295,649,650,690,692],"node_modules/react-native-vector-icons/lib/create-icon-set.js");
+},666,[112,131,295,667,668,708,710],"node_modules/react-native-vector-icons/lib/create-icon-set.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81941,7 +83710,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       }
     });
   });
-},649,[12],"node_modules/react-native-vector-icons/lib/react-native.js");
+},667,[12],"node_modules/react-native-vector-icons/lib/react-native.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -82117,7 +83886,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       size: 20
     }, _temp));
   }
-},650,[112,131,651,652,686,295,649],"node_modules/react-native-vector-icons/lib/icon-button.js");
+},668,[112,131,669,670,704,295,667],"node_modules/react-native-vector-icons/lib/icon-button.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
     var baseGetTag = _require(_dependencyMap[0], './_baseGetTag'),
         isArray = _require(_dependencyMap[1], './isArray'),
@@ -82130,7 +83899,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }
 
     module.exports = isString;
-},651,[158,200,209],"node_modules/lodash/isString.js");
+},669,[158,200,209],"node_modules/lodash/isString.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var arrayMap = _require(_dependencyMap[0], './_arrayMap'),
       baseClone = _require(_dependencyMap[1], './_baseClone'),
@@ -82172,7 +83941,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return result;
   });
   module.exports = omit;
-},652,[242,653,679,234,261,683,684,665],"node_modules/lodash/omit.js");
+},670,[242,671,697,234,261,701,702,683],"node_modules/lodash/omit.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var Stack = _require(_dependencyMap[0], './_Stack'),
       arrayEach = _require(_dependencyMap[1], './_arrayEach'),
@@ -82315,7 +84084,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseClone;
-},653,[140,654,258,655,656,660,661,662,663,197,665,223,666,667,673,200,210,675,164,677,204],"node_modules/lodash/_baseClone.js");
+},671,[140,672,258,673,674,678,679,680,681,197,683,223,684,685,691,200,210,693,164,695,204],"node_modules/lodash/_baseClone.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   function arrayEach(array, iteratee) {
     var index = -1,
@@ -82331,7 +84100,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = arrayEach;
-},654,[],"node_modules/lodash/_arrayEach.js");
+},672,[],"node_modules/lodash/_arrayEach.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var copyObject = _require(_dependencyMap[0], './_copyObject'),
       keys = _require(_dependencyMap[1], './keys');
@@ -82341,7 +84110,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseAssign;
-},655,[261,204],"node_modules/lodash/_baseAssign.js");
+},673,[261,204],"node_modules/lodash/_baseAssign.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var copyObject = _require(_dependencyMap[0], './_copyObject'),
       keysIn = _require(_dependencyMap[1], './keysIn');
@@ -82351,7 +84120,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseAssignIn;
-},656,[261,657],"node_modules/lodash/_baseAssignIn.js");
+},674,[261,675],"node_modules/lodash/_baseAssignIn.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var arrayLikeKeys = _require(_dependencyMap[0], './_arrayLikeKeys'),
       baseKeysIn = _require(_dependencyMap[1], './_baseKeysIn'),
@@ -82362,7 +84131,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = keysIn;
-},657,[205,658,222],"node_modules/lodash/keysIn.js");
+},675,[205,676,222],"node_modules/lodash/keysIn.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var isObject = _require(_dependencyMap[0], './isObject'),
       isPrototype = _require(_dependencyMap[1], './_isPrototype'),
@@ -82389,7 +84158,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseKeysIn;
-},658,[164,219,659],"node_modules/lodash/_baseKeysIn.js");
+},676,[164,219,677],"node_modules/lodash/_baseKeysIn.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   function nativeKeysIn(object) {
     var result = [];
@@ -82404,7 +84173,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = nativeKeysIn;
-},659,[],"node_modules/lodash/_nativeKeysIn.js");
+},677,[],"node_modules/lodash/_nativeKeysIn.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var root = _require(_dependencyMap[0], './_root');
 
@@ -82426,7 +84195,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneBuffer;
-},660,[160],"node_modules/lodash/_cloneBuffer.js");
+},678,[160],"node_modules/lodash/_cloneBuffer.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   function copyArray(source, array) {
     var index = -1,
@@ -82441,7 +84210,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = copyArray;
-},661,[],"node_modules/lodash/_copyArray.js");
+},679,[],"node_modules/lodash/_copyArray.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var copyObject = _require(_dependencyMap[0], './_copyObject'),
       getSymbols = _require(_dependencyMap[1], './_getSymbols');
@@ -82451,7 +84220,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = copySymbols;
-},662,[261,201],"node_modules/lodash/_copySymbols.js");
+},680,[261,201],"node_modules/lodash/_copySymbols.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var copyObject = _require(_dependencyMap[0], './_copyObject'),
       getSymbolsIn = _require(_dependencyMap[1], './_getSymbolsIn');
@@ -82461,7 +84230,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = copySymbolsIn;
-},663,[261,664],"node_modules/lodash/_copySymbolsIn.js");
+},681,[261,682],"node_modules/lodash/_copySymbolsIn.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var arrayPush = _require(_dependencyMap[0], './_arrayPush'),
       getPrototype = _require(_dependencyMap[1], './_getPrototype'),
@@ -82480,7 +84249,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return result;
   };
   module.exports = getSymbolsIn;
-},664,[199,525,201,203],"node_modules/lodash/_getSymbolsIn.js");
+},682,[199,525,201,203],"node_modules/lodash/_getSymbolsIn.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var baseGetAllKeys = _require(_dependencyMap[0], './_baseGetAllKeys'),
       getSymbolsIn = _require(_dependencyMap[1], './_getSymbolsIn'),
@@ -82491,7 +84260,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = getAllKeysIn;
-},665,[198,664,657],"node_modules/lodash/_getAllKeysIn.js");
+},683,[198,682,675],"node_modules/lodash/_getAllKeysIn.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var objectProto = Object.prototype;
   var hasOwnProperty = objectProto.hasOwnProperty;
@@ -82509,7 +84278,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = initCloneArray;
-},666,[],"node_modules/lodash/_initCloneArray.js");
+},684,[],"node_modules/lodash/_initCloneArray.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var cloneArrayBuffer = _require(_dependencyMap[0], './_cloneArrayBuffer'),
       cloneDataView = _require(_dependencyMap[1], './_cloneDataView'),
@@ -82581,7 +84350,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = initCloneByTag;
-},667,[668,669,670,671,672],"node_modules/lodash/_initCloneByTag.js");
+},685,[686,687,688,689,690],"node_modules/lodash/_initCloneByTag.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var Uint8Array = _require(_dependencyMap[0], './_Uint8Array');
 
@@ -82592,7 +84361,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneArrayBuffer;
-},668,[193],"node_modules/lodash/_cloneArrayBuffer.js");
+},686,[193],"node_modules/lodash/_cloneArrayBuffer.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var cloneArrayBuffer = _require(_dependencyMap[0], './_cloneArrayBuffer');
 
@@ -82602,7 +84371,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneDataView;
-},669,[668],"node_modules/lodash/_cloneDataView.js");
+},687,[686],"node_modules/lodash/_cloneDataView.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var reFlags = /\w*$/;
 
@@ -82613,7 +84382,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneRegExp;
-},670,[],"node_modules/lodash/_cloneRegExp.js");
+},688,[],"node_modules/lodash/_cloneRegExp.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var Symbol = _require(_dependencyMap[0], './_Symbol');
 
@@ -82625,7 +84394,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneSymbol;
-},671,[159],"node_modules/lodash/_cloneSymbol.js");
+},689,[159],"node_modules/lodash/_cloneSymbol.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var cloneArrayBuffer = _require(_dependencyMap[0], './_cloneArrayBuffer');
 
@@ -82635,7 +84404,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneTypedArray;
-},672,[668],"node_modules/lodash/_cloneTypedArray.js");
+},690,[686],"node_modules/lodash/_cloneTypedArray.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
     var baseCreate = _require(_dependencyMap[0], './_baseCreate'),
         getPrototype = _require(_dependencyMap[1], './_getPrototype'),
@@ -82646,7 +84415,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }
 
     module.exports = initCloneObject;
-},673,[674,525,219],"node_modules/lodash/_initCloneObject.js");
+},691,[692,525,219],"node_modules/lodash/_initCloneObject.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var isObject = _require(_dependencyMap[0], './isObject');
 
@@ -82672,7 +84441,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }();
 
   module.exports = baseCreate;
-},674,[164],"node_modules/lodash/_baseCreate.js");
+},692,[164],"node_modules/lodash/_baseCreate.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var baseIsMap = _require(_dependencyMap[0], './_baseIsMap'),
       baseUnary = _require(_dependencyMap[1], './_baseUnary'),
@@ -82681,7 +84450,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var nodeIsMap = nodeUtil && nodeUtil.isMap;
   var isMap = nodeIsMap ? baseUnary(nodeIsMap) : baseIsMap;
   module.exports = isMap;
-},675,[676,216,217],"node_modules/lodash/isMap.js");
+},693,[694,216,217],"node_modules/lodash/isMap.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var getTag = _require(_dependencyMap[0], './_getTag'),
       isObjectLike = _require(_dependencyMap[1], './isObjectLike');
@@ -82693,7 +84462,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseIsMap;
-},676,[223,209],"node_modules/lodash/_baseIsMap.js");
+},694,[223,209],"node_modules/lodash/_baseIsMap.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var baseIsSet = _require(_dependencyMap[0], './_baseIsSet'),
       baseUnary = _require(_dependencyMap[1], './_baseUnary'),
@@ -82702,7 +84471,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var nodeIsSet = nodeUtil && nodeUtil.isSet;
   var isSet = nodeIsSet ? baseUnary(nodeIsSet) : baseIsSet;
   module.exports = isSet;
-},677,[678,216,217],"node_modules/lodash/isSet.js");
+},695,[696,216,217],"node_modules/lodash/isSet.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var getTag = _require(_dependencyMap[0], './_getTag'),
       isObjectLike = _require(_dependencyMap[1], './isObjectLike');
@@ -82714,7 +84483,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseIsSet;
-},678,[223,209],"node_modules/lodash/_baseIsSet.js");
+},696,[223,209],"node_modules/lodash/_baseIsSet.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var castPath = _require(_dependencyMap[0], './_castPath'),
       last = _require(_dependencyMap[1], './last'),
@@ -82728,7 +84497,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseUnset;
-},679,[234,680,681,243],"node_modules/lodash/_baseUnset.js");
+},697,[234,698,699,243],"node_modules/lodash/_baseUnset.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   function last(array) {
     var length = array == null ? 0 : array.length;
@@ -82736,7 +84505,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = last;
-},680,[],"node_modules/lodash/last.js");
+},698,[],"node_modules/lodash/last.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var baseGet = _require(_dependencyMap[0], './_baseGet'),
       baseSlice = _require(_dependencyMap[1], './_baseSlice');
@@ -82746,7 +84515,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = parent;
-},681,[233,682],"node_modules/lodash/_parent.js");
+},699,[233,700],"node_modules/lodash/_parent.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   function baseSlice(array, start, end) {
     var index = -1,
@@ -82774,7 +84543,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseSlice;
-},682,[],"node_modules/lodash/_baseSlice.js");
+},700,[],"node_modules/lodash/_baseSlice.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var isPlainObject = _require(_dependencyMap[0], './isPlainObject');
 
@@ -82783,7 +84552,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = customOmitClone;
-},683,[524],"node_modules/lodash/_customOmitClone.js");
+},701,[524],"node_modules/lodash/_customOmitClone.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var flatten = _require(_dependencyMap[0], './flatten'),
       overRest = _require(_dependencyMap[1], './_overRest'),
@@ -82794,7 +84563,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = flatRest;
-},684,[685,264,266],"node_modules/lodash/_flatRest.js");
+},702,[703,264,266],"node_modules/lodash/_flatRest.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var baseFlatten = _require(_dependencyMap[0], './_baseFlatten');
 
@@ -82804,7 +84573,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = flatten;
-},685,[278],"node_modules/lodash/flatten.js");
+},703,[278],"node_modules/lodash/flatten.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var basePick = _require(_dependencyMap[0], './_basePick'),
       flatRest = _require(_dependencyMap[1], './_flatRest');
@@ -82813,7 +84582,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return object == null ? {} : basePick(object, paths);
   });
   module.exports = pick;
-},686,[687,684],"node_modules/lodash/pick.js");
+},704,[705,702],"node_modules/lodash/pick.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var basePickBy = _require(_dependencyMap[0], './_basePickBy'),
       hasIn = _require(_dependencyMap[1], './hasIn');
@@ -82825,7 +84594,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = basePick;
-},687,[688,244],"node_modules/lodash/_basePick.js");
+},705,[706,244],"node_modules/lodash/_basePick.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
     var baseGet = _require(_dependencyMap[0], './_baseGet'),
         baseSet = _require(_dependencyMap[1], './_baseSet'),
@@ -82849,7 +84618,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }
 
     module.exports = basePickBy;
-},688,[233,689,234],"node_modules/lodash/_basePickBy.js");
+},706,[233,707,234],"node_modules/lodash/_basePickBy.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var assignValue = _require(_dependencyMap[0], './_assignValue'),
       castPath = _require(_dependencyMap[1], './_castPath'),
@@ -82889,7 +84658,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseSet;
-},689,[258,234,212,164,243],"node_modules/lodash/_baseSet.js");
+},707,[258,234,212,164,243],"node_modules/lodash/_baseSet.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -83025,7 +84794,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       iconSize: 30
     }, _temp));
   }
-},690,[112,131,691,686,295,649],"node_modules/react-native-vector-icons/lib/tab-bar-item-ios.js");
+},708,[112,131,709,704,295,667],"node_modules/react-native-vector-icons/lib/tab-bar-item-ios.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var baseIsEqual = _require(_dependencyMap[0], './_baseIsEqual');
 
@@ -83034,7 +84803,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }
 
   module.exports = isEqual;
-},691,[184],"node_modules/lodash/isEqual.js");
+},709,[184],"node_modules/lodash/isEqual.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -83225,7 +84994,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       iconSize: 24
     }, _temp));
   }
-},692,[112,131,691,686,295,649],"node_modules/react-native-vector-icons/lib/toolbar-android.js");
+},710,[112,131,709,704,295,667],"node_modules/react-native-vector-icons/lib/toolbar-android.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   module.exports = {
     "ios-add": 61698,
@@ -84163,1776 +85932,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     "md-wine": 62377,
     "md-woman": 62378
   };
-},693,[],"node_modules/react-native-vector-icons/glyphmaps/Ionicons.json");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.connectAlert = exports.AlertProvider = undefined;
-
-  var _AlertProvider = _require(_dependencyMap[0], "./AlertProvider");
-
-  var _AlertProvider2 = _interopRequireDefault(_AlertProvider);
-
-  var _connectAlert = _require(_dependencyMap[1], "./connectAlert");
-
-  var _connectAlert2 = _interopRequireDefault(_connectAlert);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  exports.AlertProvider = _AlertProvider2.default;
-  exports.connectAlert = _connectAlert2.default;
-},694,[695,711],"app/components/Alert/index.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = _require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/AlertProvider.js";
-
-  var _reactNative = _require(_dependencyMap[2], "react-native");
-
-  var _propTypes = _require(_dependencyMap[3], "prop-types");
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
-
-  var _reactNativeDropdownalert = _require(_dependencyMap[4], "react-native-dropdownalert");
-
-  var _reactNativeDropdownalert2 = _interopRequireDefault(_reactNativeDropdownalert);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    AlertProvider: {
-      displayName: "AlertProvider"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/AlertProvider.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var AlertProvider = _wrapComponent("AlertProvider")((_temp = _class = function (_Component) {
-    _inherits(AlertProvider, _Component);
-
-    function AlertProvider() {
-      _classCallCheck(this, AlertProvider);
-
-      return _possibleConstructorReturn(this, (AlertProvider.__proto__ || Object.getPrototypeOf(AlertProvider)).apply(this, arguments));
-    }
-
-    _createClass(AlertProvider, [{
-      key: "getChildContext",
-      value: function getChildContext() {
-        var _this2 = this;
-
-        return {
-          alert: function alert() {
-            var _dropdown;
-
-            return (_dropdown = _this2.dropdown).alert.apply(_dropdown, arguments);
-          },
-          alertWithType: function alertWithType() {
-            var _dropdown2;
-
-            return (_dropdown2 = _this2.dropdown).alertWithType.apply(_dropdown2, arguments);
-          }
-        };
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this3 = this;
-
-        return _react3.default.createElement(
-          _reactNative.View,
-          {
-            style: {
-              flex: 1
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 27
-            }
-          },
-          _react3.default.Children.only(this.props.children),
-          _react3.default.createElement(_reactNativeDropdownalert2.default, {
-            ref: function ref(_ref) {
-              _this3.dropdown = _ref;
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 29
-            }
-          })
-        );
-      }
-    }]);
-
-    return AlertProvider;
-  }(_react2.Component), _class.childContextTypes = {
-    alertWithType: _propTypes2.default.func,
-    alert: _propTypes2.default.func
-  }, _class.propTypes = {
-    children: _propTypes2.default.any
-  }, _temp));
-
-  exports.default = AlertProvider;
-},695,[112,131,12,295,696],"app/components/Alert/AlertProvider.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = _require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = _require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/DropdownAlert.js";
-
-  var _reactNative = _require(_dependencyMap[2], "react-native");
-
-  var _propTypes = _require(_dependencyMap[3], "prop-types");
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
-
-  var _constants = _require(_dependencyMap[4], "./constants");
-
-  var _functions = _require(_dependencyMap[5], "./functions");
-
-  var _label = _require(_dependencyMap[6], "./label");
-
-  var _label2 = _interopRequireDefault(_label);
-
-  var _imageview = _require(_dependencyMap[7], "./imageview");
-
-  var _imageview2 = _interopRequireDefault(_imageview);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    DropdownAlert: {
-      displayName: "DropdownAlert"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/DropdownAlert.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var DropdownAlert = _wrapComponent("DropdownAlert")((_temp = _class = function (_Component) {
-    _inherits(DropdownAlert, _Component);
-
-    function DropdownAlert(props) {
-      _classCallCheck(this, DropdownAlert);
-
-      var _this = _possibleConstructorReturn(this, (DropdownAlert.__proto__ || Object.getPrototypeOf(DropdownAlert)).call(this, props));
-
-      _this.createPanResponder = function () {
-        _this._panResponder = _reactNative.PanResponder.create({
-          onStartShouldSetPanResponder: function onStartShouldSetPanResponder(evt, gestureState) {
-            return _this.props.panResponderEnabled;
-          },
-          onMoveShouldSetPanResponder: function onMoveShouldSetPanResponder(evt, gestureState) {
-            return Math.abs(gestureState.dx) < _this.props.sensitivity && Math.abs(gestureState.dy) >= _this.props.sensitivity && _this.props.panResponderEnabled;
-          },
-          onPanResponderMove: function onPanResponderMove(evt, gestureState) {
-            if (gestureState.dy < 0) {
-              _this.setState({
-                topValue: gestureState.dy
-              });
-            }
-          },
-          onPanResponderRelease: function onPanResponderRelease(evt, gestureState) {
-            var delta = _this.state.startDelta / 5;
-
-            if (gestureState.dy < delta) {
-              _this.close('pan');
-            }
-          },
-          onPanResponderTerminate: function onPanResponderTerminate(evt, gestureState) {
-            var delta = _this.state.startDelta / 5;
-
-            if (gestureState.dy < delta) {
-              _this.close('pan');
-            }
-          }
-        });
-      };
-
-      _this.alertWithType = function (type, title, message) {
-        if ((0, _functions.validateType)(type) == false) {
-          return;
-        }
-
-        if (typeof title !== 'string') {
-          title = title.toString();
-          console.warn('DropdownAlert: Title is not a string.');
-        }
-
-        if (typeof message !== 'string') {
-          message = message.toString();
-          console.warn('DropdownAlert: Message is not a string.');
-        }
-
-        if (_this.props.replaceEnabled == false) {
-          _this.setState({
-            type: type,
-            message: message,
-            title: title,
-            isOpen: true,
-            topValue: 0
-          });
-
-          if (_this.state.isOpen == false) {
-            _this.animate(1);
-          }
-
-          if (_this.props.closeInterval > 1) {
-            if (_this._closeTimeoutId != null) {
-              clearTimeout(_this._closeTimeoutId);
-            }
-
-            _this._closeTimeoutId = setTimeout(function () {
-              this.close('automatic');
-            }.bind(_this), _this.props.closeInterval);
-          }
-        } else {
-          var delayInMilliSeconds = 0;
-
-          if (_this.state.isOpen == true) {
-            delayInMilliSeconds = 475;
-
-            _this.close();
-          }
-
-          var self = _this;
-          setTimeout(function () {
-            if (self.state.isOpen == false) {
-              self.setState({
-                type: type,
-                message: message,
-                title: title,
-                isOpen: true,
-                topValue: 0
-              });
-            }
-
-            self.animate(1);
-
-            if (self.props.closeInterval > 1) {
-              this._closeTimeoutId = setTimeout(function () {
-                self.close('automatic');
-              }.bind(self), self.props.closeInterval);
-            }
-          }.bind(_this), delayInMilliSeconds);
-        }
-      };
-
-      _this.close = function (action) {
-        if (action == undefined) {
-          action = 'programmatic';
-        }
-
-        var onClose = _this.props.onClose;
-
-        if (action == 'cancel') {
-          onClose = _this.props.onCancel;
-        }
-
-        if (_this.state.isOpen) {
-          if (_this._closeTimeoutId != null) {
-            clearTimeout(_this._closeTimeoutId);
-          }
-
-          _this.animate(0);
-
-          setTimeout(function () {
-            if (this.state.isOpen) {
-              this.setState({
-                isOpen: false
-              });
-
-              if (this.props.updateStatusBar) {
-                if (_constants.IS_ANDROID) {
-                  _reactNative.StatusBar.setBackgroundColor(this.props.inactiveStatusBarBackgroundColor, true);
-                } else {
-                  _reactNative.StatusBar.setBarStyle(this.props.inactiveStatusBarStyle, true);
-                }
-              }
-
-              if (onClose) {
-                var data = {
-                  type: this.state.type,
-                  title: this.state.title,
-                  message: this.state.message,
-                  action: action
-                };
-                onClose(data);
-              }
-            }
-          }.bind(_this), _this.state.duration);
-        }
-      };
-
-      _this.animate = function (toValue) {
-        _reactNative.Animated.spring(_this.state.animationValue, {
-          toValue: toValue,
-          duration: _this.state.duration,
-          friction: 9,
-          useNativeDriver: _constants.IS_IOS
-        }).start();
-      };
-
-      _this.state = {
-        animationValue: new _reactNative.Animated.Value(0),
-        duration: 450,
-        type: '',
-        message: '',
-        title: '',
-        isOpen: false,
-        startDelta: props.startDelta,
-        endDelta: props.endDelta,
-        topValue: 0
-      };
-      return _this;
-    }
-
-    _createClass(DropdownAlert, [{
-      key: "componentWillMount",
-      value: function componentWillMount() {
-        this.createPanResponder();
-      }
-    }, {
-      key: "componentWillUnmount",
-      value: function componentWillUnmount() {
-        if (this._closeTimeoutId != null) {
-          clearTimeout(this._closeTimeoutId);
-        }
-      }
-    }, {
-      key: "closeDirectly",
-      value: function closeDirectly() {
-        if (this.state.isOpen) {
-          if (this._closeTimeoutId != null) {
-            clearTimeout(this._closeTimeoutId);
-          }
-
-          this.setState({
-            isOpen: false
-          });
-
-          if (this.props.updateStatusBar) {
-            if (_constants.IS_ANDROID) {
-              _reactNative.StatusBar.setBackgroundColor(this.props.inactiveStatusBarBackgroundColor, true);
-            } else {
-              _reactNative.StatusBar.setBarStyle(this.props.inactiveStatusBarStyle, true);
-            }
-          }
-        }
-      }
-    }, {
-      key: "onLayoutEvent",
-      value: function onLayoutEvent(event) {
-        var _event$nativeEvent$la = event.nativeEvent.layout,
-            x = _event$nativeEvent$la.x,
-            y = _event$nativeEvent$la.y,
-            width = _event$nativeEvent$la.width,
-            height = _event$nativeEvent$la.height;
-        var actualStartDelta = this.state.startDelta;
-        var actualEndDelta = this.state.endDelta;
-        var _props = this.props,
-            startDelta = _props.startDelta,
-            endDelta = _props.endDelta;
-
-        if (startDelta < 0) {
-          var delta = 0 - height;
-
-          if (delta != startDelta) {
-            actualStartDelta = delta;
-          }
-        } else if (startDelta > _constants.WINDOW.height) {
-          actualStartDelta = _constants.WINDOW.height + height;
-        }
-
-        if (endDelta < 0) {
-          actualEndDelta = 0;
-        } else if (endDelta > _constants.WINDOW.height) {
-          actualEndDelta = _constants.WINDOW.height - height;
-        }
-
-        var heightDelta = _constants.WINDOW.height - endDelta - height;
-
-        if (heightDelta < 0) {
-          actualEndDelta = endDelta + heightDelta;
-        }
-
-        if (actualStartDelta != this.state.startDelta || actualEndDelta != this.state.endDelta) {
-          this.setState({
-            startDelta: actualStartDelta,
-            endDelta: actualEndDelta
-          });
-        }
-      }
-    }, {
-      key: "getStyleForType",
-      value: function getStyleForType(type) {
-        var defaultContainer = this.props.defaultContainer;
-
-        switch (type) {
-          case 'info':
-            return [_reactNative.StyleSheet.flatten(defaultContainer), {
-              backgroundColor: this.props.infoColor
-            }];
-
-          case 'warn':
-            return [_reactNative.StyleSheet.flatten(defaultContainer), {
-              backgroundColor: this.props.warnColor
-            }];
-
-          case 'error':
-            return [_reactNative.StyleSheet.flatten(defaultContainer), {
-              backgroundColor: this.props.errorColor
-            }];
-
-          case 'success':
-            return [_reactNative.StyleSheet.flatten(defaultContainer), {
-              backgroundColor: this.props.successColor
-            }];
-
-          default:
-            return [_reactNative.StyleSheet.flatten(defaultContainer), _reactNative.StyleSheet.flatten(this.props.containerStyle)];
-        }
-      }
-    }, {
-      key: "getSourceForType",
-      value: function getSourceForType(type) {
-        switch (type) {
-          case 'info':
-            return _require(_dependencyMap[8], './assets/info.png');
-
-          case 'warn':
-            return _require(_dependencyMap[9], './assets/warn.png');
-
-          case 'error':
-            return _require(_dependencyMap[10], './assets/error.png');
-
-          case 'success':
-            return _require(_dependencyMap[11], './assets/success.png');
-
-          default:
-            return this.props.imageSrc;
-        }
-      }
-    }, {
-      key: "getBackgroundColorForType",
-      value: function getBackgroundColorForType(type) {
-        switch (type) {
-          case 'info':
-            return this.props.infoColor;
-
-          case 'warn':
-            return this.props.warnColor;
-
-          case 'error':
-            return this.props.errorColor;
-
-          case 'success':
-            return this.props.successColor;
-
-          default:
-            return this.props.containerStyle.backgroundColor;
-        }
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this2 = this;
-
-        var _state = this.state,
-            isOpen = _state.isOpen,
-            type = _state.type;
-
-        if (isOpen) {
-          var style = this.getStyleForType(type);
-          var source = this.getSourceForType(type);
-          var backgroundColor = this.getBackgroundColorForType(type);
-          var _props2 = this.props,
-              activeStatusBarBackgroundColor = _props2.activeStatusBarBackgroundColor,
-              translucent = _props2.translucent,
-              updateStatusBar = _props2.updateStatusBar,
-              activeStatusBarStyle = _props2.activeStatusBarStyle,
-              cancelBtnImageSrc = _props2.cancelBtnImageSrc,
-              showCancel = _props2.showCancel;
-
-          if (_constants.IS_ANDROID) {
-            if (translucent) {
-              style = [style, {
-                paddingTop: _reactNative.StatusBar.currentHeight
-              }];
-            }
-
-            if (type !== 'custom') {
-              activeStatusBarBackgroundColor = backgroundColor;
-            }
-          }
-
-          if (updateStatusBar) {
-            if (_constants.IS_ANDROID) {
-              _reactNative.StatusBar.setBackgroundColor(activeStatusBarBackgroundColor, true);
-
-              _reactNative.StatusBar.setTranslucent(translucent);
-            } else if (_constants.IS_IOS) {
-              _reactNative.StatusBar.setBarStyle(activeStatusBarStyle, true);
-            }
-          }
-
-          var wrapperStyle = {
-            transform: [{
-              translateY: this.state.animationValue.interpolate({
-                inputRange: [0, 1],
-                outputRange: [this.state.startDelta, this.state.endDelta]
-              })
-            }],
-            position: 'absolute',
-            top: this.state.topValue,
-            left: 0,
-            right: 0,
-            elevation: this.props.elevation
-          };
-          if (this.props.zIndex != null) wrapperStyle['zIndex'] = this.props.zIndex;
-          return _react3.default.createElement(
-            _reactNative.Animated.View,
-            _extends({
-              ref: function ref(_ref) {
-                return _this2.mainView = _ref;
-              }
-            }, this._panResponder.panHandlers, {
-              style: wrapperStyle,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 419
-              }
-            }),
-            _react3.default.createElement(
-              _reactNative.TouchableOpacity,
-              {
-                activeOpacity: !this.props.tapToCloseEnabled || showCancel ? 1 : 0.95,
-                onPress: showCancel ? null : function () {
-                  return _this2.close('tap');
-                },
-                disabled: !this.props.tapToCloseEnabled,
-                onLayout: function onLayout(event) {
-                  return _this2.onLayoutEvent(event);
-                },
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 424
-                }
-              },
-              _react3.default.createElement(
-                _reactNative.View,
-                {
-                  style: style,
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 430
-                  }
-                },
-                _react3.default.createElement(_imageview2.default, {
-                  style: _reactNative.StyleSheet.flatten(this.props.imageStyle),
-                  source: source,
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 431
-                  }
-                }),
-                _react3.default.createElement(
-                  _reactNative.View,
-                  {
-                    style: _reactNative.StyleSheet.flatten(this.props.defaultTextContainer),
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 432
-                    }
-                  },
-                  _react3.default.createElement(_label2.default, {
-                    style: _reactNative.StyleSheet.flatten(this.props.titleStyle),
-                    numberOfLines: this.props.titleNumOfLines,
-                    text: this.state.title,
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 433
-                    }
-                  }),
-                  _react3.default.createElement(_label2.default, {
-                    style: _reactNative.StyleSheet.flatten(this.props.messageStyle),
-                    numberOfLines: this.props.messageNumOfLines,
-                    text: this.state.message,
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 434
-                    }
-                  })
-                ),
-                showCancel && _react3.default.createElement(
-                  _reactNative.TouchableOpacity,
-                  {
-                    style: {
-                      alignSelf: this.props.cancelBtnImageStyle.alignSelf,
-                      width: this.props.cancelBtnImageStyle.width,
-                      height: this.props.cancelBtnImageStyle.height
-                    },
-                    onPress: function onPress() {
-                      return _this2.close('cancel');
-                    },
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 437
-                    }
-                  },
-                  _react3.default.createElement(_imageview2.default, {
-                    style: this.props.cancelBtnImageStyle,
-                    source: this.props.cancelBtnImageSrc,
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 445
-                    }
-                  })
-                )
-              )
-            )
-          );
-        }
-
-        return null;
-      }
-    }]);
-
-    return DropdownAlert;
-  }(_react2.Component), _class.propTypes = {
-    imageSrc: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-    cancelBtnImageSrc: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-    infoColor: _propTypes2.default.string,
-    warnColor: _propTypes2.default.string,
-    errorColor: _propTypes2.default.string,
-    successColor: _propTypes2.default.string,
-    closeInterval: _propTypes2.default.number,
-    startDelta: _propTypes2.default.number,
-    endDelta: _propTypes2.default.number,
-    containerStyle: _reactNative.ViewPropTypes.style,
-    titleStyle: _reactNative.Text.propTypes.style,
-    messageStyle: _reactNative.Text.propTypes.style,
-    imageStyle: _reactNative.Image.propTypes.style,
-    cancelBtnImageStyle: _reactNative.Image.propTypes.style,
-    titleNumOfLines: _propTypes2.default.number,
-    messageNumOfLines: _propTypes2.default.number,
-    onClose: _propTypes2.default.func,
-    onCancel: _propTypes2.default.func,
-    showCancel: _propTypes2.default.bool,
-    tapToCloseEnabled: _propTypes2.default.bool,
-    panResponderEnabled: _propTypes2.default.bool,
-    replaceEnabled: _propTypes2.default.bool,
-    translucent: _propTypes2.default.bool,
-    activeStatusBarStyle: _propTypes2.default.string,
-    activeStatusBarBackgroundColor: _propTypes2.default.string,
-    inactiveStatusBarStyle: _propTypes2.default.string,
-    inactiveStatusBarBackgroundColor: _propTypes2.default.string,
-    updateStatusBar: _propTypes2.default.bool,
-    elevation: _propTypes2.default.number,
-    zIndex: _propTypes2.default.number,
-    sensitivity: _propTypes2.default.number,
-    defaultContainer: _reactNative.ViewPropTypes.style,
-    defaultTextContainer: _reactNative.ViewPropTypes.style
-  }, _class.defaultProps = {
-    onClose: null,
-    onCancel: null,
-    closeInterval: 4000,
-    startDelta: -100,
-    endDelta: 0,
-    titleNumOfLines: 1,
-    messageNumOfLines: 3,
-    imageSrc: null,
-    cancelBtnImageSrc: _require(_dependencyMap[12], './assets/cancel.png'),
-    infoColor: '#2B73B6',
-    warnColor: '#cd853f',
-    errorColor: '#cc3232',
-    successColor: '#32A54A',
-    showCancel: false,
-    tapToCloseEnabled: true,
-    panResponderEnabled: true,
-    replaceEnabled: true,
-    containerStyle: {
-      padding: 16,
-      flexDirection: 'row'
-    },
-    titleStyle: {
-      fontSize: 16,
-      textAlign: 'left',
-      fontWeight: 'bold',
-      color: 'white',
-      backgroundColor: 'transparent'
-    },
-    messageStyle: {
-      fontSize: 14,
-      textAlign: 'left',
-      fontWeight: 'normal',
-      color: 'white',
-      backgroundColor: 'transparent'
-    },
-    imageStyle: {
-      padding: 8,
-      width: _constants.DEFAULT_IMAGE_DIMENSIONS,
-      height: _constants.DEFAULT_IMAGE_DIMENSIONS,
-      alignSelf: 'center'
-    },
-    cancelBtnImageStyle: {
-      padding: 8,
-      width: _constants.DEFAULT_IMAGE_DIMENSIONS,
-      height: _constants.DEFAULT_IMAGE_DIMENSIONS,
-      alignSelf: 'center'
-    },
-    defaultContainer: {
-      padding: 8,
-      paddingTop: _constants.IS_ANDROID ? 0 : 20,
-      flexDirection: 'row'
-    },
-    defaultTextContainer: {
-      flex: 1,
-      padding: 8
-    },
-    translucent: false,
-    activeStatusBarStyle: 'light-content',
-    activeStatusBarBackgroundColor: _constants.StatusBarDefaultBackgroundColor,
-    inactiveStatusBarStyle: _constants.StatusBarDefaultBarStyle,
-    inactiveStatusBarBackgroundColor: _constants.StatusBarDefaultBackgroundColor,
-    updateStatusBar: true,
-    elevation: 1,
-    zIndex: null,
-    sensitivity: 20
-  }, _temp));
-
-  exports.default = DropdownAlert;
-},696,[112,131,12,697,702,703,704,705,706,707,708,709,710],"node_modules/react-native-dropdownalert/DropdownAlert.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  if (process.env.NODE_ENV !== 'production') {
-    var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && (typeof Symbol === "function" ? Symbol.for : "@@for") && (typeof Symbol === "function" ? Symbol.for : "@@for")('react.element') || 0xeac7;
-
-    var isValidElement = function isValidElement(object) {
-      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    };
-
-    var throwOnDirectAccess = true;
-    module.exports = _require(_dependencyMap[0], './factoryWithTypeCheckers')(isValidElement, throwOnDirectAccess);
-  } else {
-    module.exports = _require(_dependencyMap[1], './factoryWithThrowingShims')();
-  }
-},697,[698,701],"node_modules/react-native-dropdownalert/node_modules/prop-types/index.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  'use strict';
-
-  var emptyFunction = _require(_dependencyMap[0], 'fbjs/lib/emptyFunction');
-
-  var invariant = _require(_dependencyMap[1], 'fbjs/lib/invariant');
-
-  var warning = _require(_dependencyMap[2], 'fbjs/lib/warning');
-
-  var ReactPropTypesSecret = _require(_dependencyMap[3], './lib/ReactPropTypesSecret');
-
-  var checkPropTypes = _require(_dependencyMap[4], './checkPropTypes');
-
-  module.exports = function (isValidElement, throwOnDirectAccess) {
-    var ITERATOR_SYMBOL = typeof Symbol === 'function' && (typeof Symbol === "function" ? Symbol.iterator : "@@iterator");
-    var FAUX_ITERATOR_SYMBOL = '@@iterator';
-
-    function getIteratorFn(maybeIterable) {
-      var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-
-      if (typeof iteratorFn === 'function') {
-        return iteratorFn;
-      }
-    }
-
-    var ANONYMOUS = '<<anonymous>>';
-    var ReactPropTypes = {
-      array: createPrimitiveTypeChecker('array'),
-      bool: createPrimitiveTypeChecker('boolean'),
-      func: createPrimitiveTypeChecker('function'),
-      number: createPrimitiveTypeChecker('number'),
-      object: createPrimitiveTypeChecker('object'),
-      string: createPrimitiveTypeChecker('string'),
-      symbol: createPrimitiveTypeChecker('symbol'),
-      any: createAnyTypeChecker(),
-      arrayOf: createArrayOfTypeChecker,
-      element: createElementTypeChecker(),
-      instanceOf: createInstanceTypeChecker,
-      node: createNodeChecker(),
-      objectOf: createObjectOfTypeChecker,
-      oneOf: createEnumTypeChecker,
-      oneOfType: createUnionTypeChecker,
-      shape: createShapeTypeChecker
-    };
-
-    function is(x, y) {
-      if (x === y) {
-        return x !== 0 || 1 / x === 1 / y;
-      } else {
-        return x !== x && y !== y;
-      }
-    }
-
-    function PropTypeError(message) {
-      this.message = message;
-      this.stack = '';
-    }
-
-    PropTypeError.prototype = Error.prototype;
-
-    function createChainableTypeChecker(validate) {
-      if (process.env.NODE_ENV !== 'production') {
-        var manualPropTypeCallCache = {};
-        var manualPropTypeWarningCount = 0;
-      }
-
-      function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-        componentName = componentName || ANONYMOUS;
-        propFullName = propFullName || propName;
-
-        if (secret !== ReactPropTypesSecret) {
-          if (throwOnDirectAccess) {
-            invariant(false, 'Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
-          } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
-            var cacheKey = componentName + ':' + propName;
-
-            if (!manualPropTypeCallCache[cacheKey] && manualPropTypeWarningCount < 3) {
-              warning(false, 'You are manually calling a React.PropTypes validation ' + 'function for the `%s` prop on `%s`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.', propFullName, componentName);
-              manualPropTypeCallCache[cacheKey] = true;
-              manualPropTypeWarningCount++;
-            }
-          }
-        }
-
-        if (props[propName] == null) {
-          if (isRequired) {
-            if (props[propName] === null) {
-              return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
-            }
-
-            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
-          }
-
-          return null;
-        } else {
-          return validate(props, propName, componentName, location, propFullName);
-        }
-      }
-
-      var chainedCheckType = checkType.bind(null, false);
-      chainedCheckType.isRequired = checkType.bind(null, true);
-      return chainedCheckType;
-    }
-
-    function createPrimitiveTypeChecker(expectedType) {
-      function validate(props, propName, componentName, location, propFullName, secret) {
-        var propValue = props[propName];
-        var propType = getPropType(propValue);
-
-        if (propType !== expectedType) {
-          var preciseType = getPreciseType(propValue);
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
-        }
-
-        return null;
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createAnyTypeChecker() {
-      return createChainableTypeChecker(emptyFunction.thatReturnsNull);
-    }
-
-    function createArrayOfTypeChecker(typeChecker) {
-      function validate(props, propName, componentName, location, propFullName) {
-        if (typeof typeChecker !== 'function') {
-          return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
-        }
-
-        var propValue = props[propName];
-
-        if (!Array.isArray(propValue)) {
-          var propType = getPropType(propValue);
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
-        }
-
-        for (var i = 0; i < propValue.length; i++) {
-          var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
-
-          if (error instanceof Error) {
-            return error;
-          }
-        }
-
-        return null;
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createElementTypeChecker() {
-      function validate(props, propName, componentName, location, propFullName) {
-        var propValue = props[propName];
-
-        if (!isValidElement(propValue)) {
-          var propType = getPropType(propValue);
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
-        }
-
-        return null;
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createInstanceTypeChecker(expectedClass) {
-      function validate(props, propName, componentName, location, propFullName) {
-        if (!(props[propName] instanceof expectedClass)) {
-          var expectedClassName = expectedClass.name || ANONYMOUS;
-          var actualClassName = getClassName(props[propName]);
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
-        }
-
-        return null;
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createEnumTypeChecker(expectedValues) {
-      if (!Array.isArray(expectedValues)) {
-        process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
-        return emptyFunction.thatReturnsNull;
-      }
-
-      function validate(props, propName, componentName, location, propFullName) {
-        var propValue = props[propName];
-
-        for (var i = 0; i < expectedValues.length; i++) {
-          if (is(propValue, expectedValues[i])) {
-            return null;
-          }
-        }
-
-        var valuesString = JSON.stringify(expectedValues);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createObjectOfTypeChecker(typeChecker) {
-      function validate(props, propName, componentName, location, propFullName) {
-        if (typeof typeChecker !== 'function') {
-          return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
-        }
-
-        var propValue = props[propName];
-        var propType = getPropType(propValue);
-
-        if (propType !== 'object') {
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
-        }
-
-        for (var key in propValue) {
-          if (propValue.hasOwnProperty(key)) {
-            var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-
-            if (error instanceof Error) {
-              return error;
-            }
-          }
-        }
-
-        return null;
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createUnionTypeChecker(arrayOfTypeCheckers) {
-      if (!Array.isArray(arrayOfTypeCheckers)) {
-        process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-        return emptyFunction.thatReturnsNull;
-      }
-
-      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-        var checker = arrayOfTypeCheckers[i];
-
-        if (typeof checker !== 'function') {
-          warning(false, 'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' + 'received %s at index %s.', getPostfixForTypeWarning(checker), i);
-          return emptyFunction.thatReturnsNull;
-        }
-      }
-
-      function validate(props, propName, componentName, location, propFullName) {
-        for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-          var checker = arrayOfTypeCheckers[i];
-
-          if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
-            return null;
-          }
-        }
-
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createNodeChecker() {
-      function validate(props, propName, componentName, location, propFullName) {
-        if (!isNode(props[propName])) {
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
-        }
-
-        return null;
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function createShapeTypeChecker(shapeTypes) {
-      function validate(props, propName, componentName, location, propFullName) {
-        var propValue = props[propName];
-        var propType = getPropType(propValue);
-
-        if (propType !== 'object') {
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-        }
-
-        for (var key in shapeTypes) {
-          var checker = shapeTypes[key];
-
-          if (!checker) {
-            continue;
-          }
-
-          var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-
-          if (error) {
-            return error;
-          }
-        }
-
-        return null;
-      }
-
-      return createChainableTypeChecker(validate);
-    }
-
-    function isNode(propValue) {
-      switch (typeof propValue) {
-        case 'number':
-        case 'string':
-        case 'undefined':
-          return true;
-
-        case 'boolean':
-          return !propValue;
-
-        case 'object':
-          if (Array.isArray(propValue)) {
-            return propValue.every(isNode);
-          }
-
-          if (propValue === null || isValidElement(propValue)) {
-            return true;
-          }
-
-          var iteratorFn = getIteratorFn(propValue);
-
-          if (iteratorFn) {
-            var iterator = iteratorFn.call(propValue);
-            var step;
-
-            if (iteratorFn !== propValue.entries) {
-              while (!(step = iterator.next()).done) {
-                if (!isNode(step.value)) {
-                  return false;
-                }
-              }
-            } else {
-              while (!(step = iterator.next()).done) {
-                var entry = step.value;
-
-                if (entry) {
-                  if (!isNode(entry[1])) {
-                    return false;
-                  }
-                }
-              }
-            }
-          } else {
-            return false;
-          }
-
-          return true;
-
-        default:
-          return false;
-      }
-    }
-
-    function isSymbol(propType, propValue) {
-      if (propType === 'symbol') {
-        return true;
-      }
-
-      if (propValue['@@toStringTag'] === 'Symbol') {
-        return true;
-      }
-
-      if (typeof Symbol === 'function' && propValue instanceof Symbol) {
-        return true;
-      }
-
-      return false;
-    }
-
-    function getPropType(propValue) {
-      var propType = typeof propValue;
-
-      if (Array.isArray(propValue)) {
-        return 'array';
-      }
-
-      if (propValue instanceof RegExp) {
-        return 'object';
-      }
-
-      if (isSymbol(propType, propValue)) {
-        return 'symbol';
-      }
-
-      return propType;
-    }
-
-    function getPreciseType(propValue) {
-      if (typeof propValue === 'undefined' || propValue === null) {
-        return '' + propValue;
-      }
-
-      var propType = getPropType(propValue);
-
-      if (propType === 'object') {
-        if (propValue instanceof Date) {
-          return 'date';
-        } else if (propValue instanceof RegExp) {
-          return 'regexp';
-        }
-      }
-
-      return propType;
-    }
-
-    function getPostfixForTypeWarning(value) {
-      var type = getPreciseType(value);
-
-      switch (type) {
-        case 'array':
-        case 'object':
-          return 'an ' + type;
-
-        case 'boolean':
-        case 'date':
-        case 'regexp':
-          return 'a ' + type;
-
-        default:
-          return type;
-      }
-    }
-
-    function getClassName(propValue) {
-      if (!propValue.constructor || !propValue.constructor.name) {
-        return ANONYMOUS;
-      }
-
-      return propValue.constructor.name;
-    }
-
-    ReactPropTypes.checkPropTypes = checkPropTypes;
-    ReactPropTypes.PropTypes = ReactPropTypes;
-    return ReactPropTypes;
-  };
-},698,[57,13,56,699,700],"node_modules/react-native-dropdownalert/node_modules/prop-types/factoryWithTypeCheckers.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  'use strict';
-
-  var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-  module.exports = ReactPropTypesSecret;
-},699,[],"node_modules/react-native-dropdownalert/node_modules/prop-types/lib/ReactPropTypesSecret.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  'use strict';
-
-  if (process.env.NODE_ENV !== 'production') {
-    var invariant = _require(_dependencyMap[0], 'fbjs/lib/invariant');
-
-    var warning = _require(_dependencyMap[1], 'fbjs/lib/warning');
-
-    var ReactPropTypesSecret = _require(_dependencyMap[2], './lib/ReactPropTypesSecret');
-
-    var loggedTypeFailures = {};
-  }
-
-  function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-    if (process.env.NODE_ENV !== 'production') {
-      for (var typeSpecName in typeSpecs) {
-        if (typeSpecs.hasOwnProperty(typeSpecName)) {
-          var error;
-
-          try {
-            invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
-            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-          } catch (ex) {
-            error = ex;
-          }
-
-          warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
-
-          if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-            loggedTypeFailures[error.message] = true;
-            var stack = getStack ? getStack() : '';
-            warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
-          }
-        }
-      }
-    }
-  }
-
-  module.exports = checkPropTypes;
-},700,[13,56,699],"node_modules/react-native-dropdownalert/node_modules/prop-types/checkPropTypes.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  'use strict';
-
-  var emptyFunction = _require(_dependencyMap[0], 'fbjs/lib/emptyFunction');
-
-  var invariant = _require(_dependencyMap[1], 'fbjs/lib/invariant');
-
-  var ReactPropTypesSecret = _require(_dependencyMap[2], './lib/ReactPropTypesSecret');
-
-  module.exports = function () {
-    function shim(props, propName, componentName, location, propFullName, secret) {
-      if (secret === ReactPropTypesSecret) {
-        return;
-      }
-
-      invariant(false, 'Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
-    }
-
-    ;
-    shim.isRequired = shim;
-
-    function getShim() {
-      return shim;
-    }
-
-    ;
-    var ReactPropTypes = {
-      array: shim,
-      bool: shim,
-      func: shim,
-      number: shim,
-      object: shim,
-      string: shim,
-      symbol: shim,
-      any: shim,
-      arrayOf: getShim,
-      element: shim,
-      instanceOf: getShim,
-      node: shim,
-      objectOf: getShim,
-      oneOf: getShim,
-      oneOfType: getShim,
-      shape: getShim
-    };
-    ReactPropTypes.checkPropTypes = emptyFunction;
-    ReactPropTypes.PropTypes = ReactPropTypes;
-    return ReactPropTypes;
-  };
-},701,[57,13,699],"node_modules/react-native-dropdownalert/node_modules/prop-types/factoryWithThrowingShims.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  var _reactNative = _require(_dependencyMap[0], "react-native");
-
-  var StatusBarDefaultBarStyle = _reactNative.StatusBar._defaultProps.barStyle.value;
-  var StatusBarDefaultBackgroundColor = _reactNative.StatusBar._defaultProps.backgroundColor.value;
-  var DEFAULT_IMAGE_DIMENSIONS = 36;
-
-  var WINDOW = _reactNative.Dimensions.get('window');
-
-  var HEIGHT = WINDOW.height;
-  var WIDTH = WINDOW.width;
-  var IS_IOS = _reactNative.Platform.OS == 'ios';
-  var IS_ANDROID = _reactNative.Platform.OS == 'android';
-  module.exports = {
-    StatusBarDefaultBarStyle: StatusBarDefaultBarStyle,
-    StatusBarDefaultBackgroundColor: StatusBarDefaultBackgroundColor,
-    DEFAULT_IMAGE_DIMENSIONS: DEFAULT_IMAGE_DIMENSIONS,
-    WINDOW: WINDOW,
-    HEIGHT: HEIGHT,
-    WIDTH: WIDTH,
-    IS_IOS: IS_IOS,
-    IS_ANDROID: IS_ANDROID
-  };
-},702,[12],"node_modules/react-native-dropdownalert/constants.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports.validateType = function (type) {
-    if (type.length === 0 || type === null) {
-      console.warn('Missing DropdownAlert type. Available types: info, warn, error or custom');
-      return false;
-    }
-
-    if (type != 'info' && type != 'warn' && type != 'error' && type != 'custom' && type != 'success') {
-      console.warn('Invalid DropdownAlert type. Available types: info, warn, error, success, or custom');
-      return false;
-    }
-
-    return true;
-  };
-},703,[],"node_modules/react-native-dropdownalert/functions.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = _require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = _require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/label.js";
-
-  var _propTypes = _require(_dependencyMap[2], "prop-types");
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
-
-  var _reactNative = _require(_dependencyMap[3], "react-native");
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    Label: {
-      displayName: "Label"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/label.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var Label = _wrapComponent("Label")((_temp = _class = function (_Component) {
-    _inherits(Label, _Component);
-
-    function Label() {
-      _classCallCheck(this, Label);
-
-      return _possibleConstructorReturn(this, (Label.__proto__ || Object.getPrototypeOf(Label)).apply(this, arguments));
-    }
-
-    _createClass(Label, [{
-      key: "render",
-      value: function render() {
-        var _props = this.props,
-            text = _props.text,
-            style = _props.style,
-            numberOfLines = _props.numberOfLines,
-            textProps = _props.textProps;
-
-        if (text !== null && text.length > 0) {
-          return _react3.default.createElement(
-            _reactNative.Text,
-            _extends({}, textProps, {
-              style: style,
-              numberOfLines: numberOfLines,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 27
-              }
-            }),
-            text
-          );
-        }
-
-        return null;
-      }
-    }]);
-
-    return Label;
-  }(_react2.Component), _class.propTypes = {
-    text: _propTypes2.default.string,
-    style: _reactNative.Text.propTypes.style,
-    numberOfLines: _propTypes2.default.number,
-    textProps: _propTypes2.default.object
-  }, _class.defaultProps = {
-    numberOfLines: 1,
-    style: {
-      fontSize: 16,
-      textAlign: 'left',
-      fontWeight: 'normal',
-      color: 'white',
-      backgroundColor: 'transparent'
-    },
-    textProps: {}
-  }, _temp));
-
-  exports.default = Label;
-},704,[112,131,697,12],"node_modules/react-native-dropdownalert/label.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = _require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = _require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/imageview.js";
-
-  var _propTypes = _require(_dependencyMap[2], "prop-types");
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
-
-  var _reactNative = _require(_dependencyMap[3], "react-native");
-
-  var _constants = _require(_dependencyMap[4], "./constants");
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    ImageView: {
-      displayName: "ImageView"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/node_modules/react-native-dropdownalert/imageview.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var ImageView = _wrapComponent("ImageView")((_temp = _class = function (_Component) {
-    _inherits(ImageView, _Component);
-
-    function ImageView() {
-      _classCallCheck(this, ImageView);
-
-      return _possibleConstructorReturn(this, (ImageView.__proto__ || Object.getPrototypeOf(ImageView)).apply(this, arguments));
-    }
-
-    _createClass(ImageView, [{
-      key: "render",
-      value: function render() {
-        var _props = this.props,
-            source = _props.source,
-            style = _props.style,
-            imageProps = _props.imageProps;
-
-        if (source != null) {
-          var isRemote = typeof source === 'string';
-
-          if (!style['width']) {
-            style['width'] = _constants.DEFAULT_IMAGE_DIMENSIONS;
-          }
-
-          if (!style['height']) {
-            style['height'] = _constants.DEFAULT_IMAGE_DIMENSIONS;
-          }
-
-          return _react3.default.createElement(_reactNative.Image, _extends({
-            style: style,
-            source: isRemote ? {
-              uri: source
-            } : source
-          }, imageProps, {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 32
-            }
-          }));
-        }
-
-        return null;
-      }
-    }]);
-
-    return ImageView;
-  }(_react2.Component), _class.propTypes = {
-    style: _reactNative.Image.propTypes.style,
-    source: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-    imageProps: _propTypes2.default.object
-  }, _class.defaultProps = {
-    style: {
-      padding: 8,
-      width: _constants.DEFAULT_IMAGE_DIMENSIONS,
-      height: _constants.DEFAULT_IMAGE_DIMENSIONS,
-      alignSelf: 'center'
-    },
-    source: null,
-    imageProps: {}
-  }, _temp));
-
-  exports.default = ImageView;
-},705,[112,131,697,12,702],"node_modules/react-native-dropdownalert/imageview.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
-    "width": 36,
-    "height": 36,
-    "scales": [1, 2, 3],
-    "hash": "b86a115937dbb5b00c4698e88f32885f",
-    "name": "info",
-    "type": "png"
-  });
-},706,[329],"node_modules/react-native-dropdownalert/assets/info.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
-    "width": 36,
-    "height": 36,
-    "scales": [1, 2, 3],
-    "hash": "b3b160543422bf83c0dffb247f5a9a3c",
-    "name": "warn",
-    "type": "png"
-  });
-},707,[329],"node_modules/react-native-dropdownalert/assets/warn.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
-    "width": 36,
-    "height": 36,
-    "scales": [1, 2, 3],
-    "hash": "def248a046dc4b7a75bcd60e1ce444d7",
-    "name": "error",
-    "type": "png"
-  });
-},708,[329],"node_modules/react-native-dropdownalert/assets/error.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
-    "width": 36,
-    "height": 36,
-    "scales": [1, 2, 3],
-    "hash": "fa2fc3283239617c85705d8d3fb30148",
-    "name": "success",
-    "type": "png"
-  });
-},709,[329],"node_modules/react-native-dropdownalert/assets/success.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/node_modules/react-native-dropdownalert/assets",
-    "width": 36,
-    "height": 36,
-    "scales": [1, 2, 3],
-    "hash": "73cf01e3b92f81ad47ce862a7b96003c",
-    "name": "cancel",
-    "type": "png"
-  });
-},710,[329],"node_modules/react-native-dropdownalert/assets/cancel.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = _require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-  var _jsxFileName = "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/connectAlert.js";
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _hoistNonReactStatics = _require(_dependencyMap[2], "hoist-non-react-statics");
-
-  var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
-
-  var _propTypes = _require(_dependencyMap[3], "prop-types");
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    ConnectedAlert: {
-      displayName: "ConnectedAlert",
-      isInFunction: true
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/Kuznetsov/Documents/Projects/ReactNative/CurrencyConverter/CurrencyConverter/app/components/Alert/connectAlert.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var connectAlert = function connectAlert(WrappedComponent) {
-    var ConnectedAlert = _wrapComponent("ConnectedAlert")(function (_Component) {
-      _inherits(ConnectedAlert, _Component);
-
-      function ConnectedAlert() {
-        _classCallCheck(this, ConnectedAlert);
-
-        return _possibleConstructorReturn(this, (ConnectedAlert.__proto__ || Object.getPrototypeOf(ConnectedAlert)).apply(this, arguments));
-      }
-
-      _createClass(ConnectedAlert, [{
-        key: "render",
-        value: function render() {
-          return _react3.default.createElement(WrappedComponent, _extends({}, this.props, {
-            alertWithType: this.context.alertWithType,
-            alert: this.context.alert,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 11
-            }
-          }));
-        }
-      }]);
-
-      return ConnectedAlert;
-    }(_react2.Component));
-
-    ConnectedAlert.contextTypes = {
-      alertWithType: _propTypes2.default.func,
-      alert: _propTypes2.default.func
-    };
-    return (0, _hoistNonReactStatics2.default)(ConnectedAlert, WrappedComponent);
-  };
-
-  exports.default = connectAlert;
-},711,[112,131,564,295],"app/components/Alert/connectAlert.js");
+},711,[],"node_modules/react-native-vector-icons/glyphmaps/Ionicons.json");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86131,7 +86131,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }, _temp2));
 
   exports.default = (0, _reactRedux.connect)()(Themes);
-},712,[112,131,12,511,295,495,639,713],"app/screens/Themes.js");
+},712,[112,131,12,511,295,495,657,713],"app/screens/Themes.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -89807,7 +89807,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         return state;
     }
   };
-},738,[637],"app/reducers/currencies.js");
+},738,[655],"app/reducers/currencies.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -89952,6 +89952,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }, rootSaga, this);
   });
   exports.default = rootSaga;
-},740,[735,637],"app/config/sagas.js");
+},740,[735,655],"app/config/sagas.js");
 require(23);
 require(11);//# sourceMappingURL=index.map
